@@ -1,0 +1,87 @@
+.footerDiv{
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    padding: 50px;
+    background: #2B2024;
+    padding-bottom: 0;
+}
+.angel_fit{
+    p {
+        width: 200px;
+    }
+    display: flex;
+   img {
+    margin-right: 20px;
+   }
+}
+.angelFit_block{
+    p{
+        width: 270px;
+        color: #E2E2E2;
+    }
+}
+h2{
+    font-size: 30px;
+    color: #fd0054;
+}
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+h3{
+    color: #fd0054;
+    margin-bottom: 50px;
+    font-weight:500;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    
+    input {
+        height: 40px;
+        width: 200px;
+        border: 0;
+        background-color: rgba(252, 246, 246, 0.2); 
+        padding-left: 15px;
+    }
+
+    button {
+        width: 100px;
+        height: 40px;
+        font-size: 13px;
+        background-color: #fd0054;
+        margin-top: 30px;
+        color: #FFFFFF;
+        border: none;
+    }
+}
+.lower_info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+span {
+    align-items: center;
+    color: #909090;
+    padding: 20px;
+}
+
+.logos {
+    img {
+        padding: 20px;
+        width: 25px;
+    }
+}
+.contacts{
+    display: flex;
+    align-items: center;
+    span {
+        font-size: 15px;
+    }
+}
+hr {
+    border: 1px solid #464646;
+}
