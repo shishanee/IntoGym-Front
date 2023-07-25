@@ -1,0 +1,35 @@
+.signBlock {
+  background: #8b0330;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  a {
+    font-size: 30px;
+    text-decoration: none;
+    background: black;
+    color: #ffffff;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    transition: .3s;
+  }
+  span {
+    font-size: 24px;
+    color: #ffffff;
+  }
+  a:hover {
+    color: black;
+    background: #ffffff;
+  }
+  img {
+    width: 1081px;
+  }
+  .links {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
