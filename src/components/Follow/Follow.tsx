@@ -17,7 +17,7 @@ const Follow = () => {
     <div className={styles.follow}>
       {follow.map((item) => {
         return (
-          <div className={styles.block}>
+          <div key={item._id} className={styles.block}>
             <h1>{item.name}</h1>
             <div className={styles.price}>
               <h2> ₽ {item.price} </h2>&nbsp;&nbsp;
