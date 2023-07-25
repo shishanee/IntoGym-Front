@@ -46,7 +46,7 @@ function Footer() {
                 <span className={styles.span}>Copyright @ 2020 All Rights Reserved.</span>
                 <span className={styles.span}>+7 (989)-909-91-98 </span>
                 <span className={styles.span}>gaitukaev777@mail.ru</span>
-                <span className={styles.span}>Чечня, Грозный</span>
+                <span className={styles.span}>Russia, Moscov</span>
             </div>
             <div className={styles.logos}>
                 <img src={facebook} alt="" />
