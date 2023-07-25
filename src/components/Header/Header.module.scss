@@ -95,3 +95,12 @@
 header {
   background: #8b0330;
 }
+
+.profile {
+  display: flex;
+  align-items: center;
+  img {
+    width: 24px;
+    
+  }
+}
