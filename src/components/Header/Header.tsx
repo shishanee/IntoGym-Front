@@ -9,8 +9,11 @@ import youtube from "../../../public/Icon awesome-youtube.png";
 import linkedin from "../../../public/Icon awesome-linkedin.png";
 import sport from "../../../public/Icon ionic-ios-fitness.png";
 import { Link } from "react-router-dom";
+import parseJWT from '../../helpers/parseJwt.js'
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const token = useSelector((state) => state.application.token)
   return (
     <header>
       <div className={styles.firstBlock}>
@@ -62,7 +65,7 @@ const Header = () => {
             <Link to={"#"}>CONTACTS</Link>
           </div>
           <div className={styles.join}>
-            <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>
+            {!token ? <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>: <Link to={"/profile"}>Профиль</Link>}
           </div>
         </div>
       </div>

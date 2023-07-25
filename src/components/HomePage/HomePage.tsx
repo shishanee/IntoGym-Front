@@ -80,6 +80,7 @@ const HomePage = () => {
         <span>{bmi}</span>
       </div>
       <Follow />
+      <Schedule/>
     </div>
     </>
   );
