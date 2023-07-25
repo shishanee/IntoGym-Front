@@ -11,6 +11,7 @@ import sport from "../../../public/Icon ionic-ios-fitness.png";
 import { Link } from "react-router-dom";
 import parseJWT from '../../helpers/parseJwt.js'
 import { useSelector } from "react-redux";
+import ava from '../../../public/user (1).png'
 
 const Header = () => {
   const token = useSelector((state) => state.application.token)
@@ -65,7 +66,7 @@ const Header = () => {
             <Link to={"#"}>CONTACTS</Link>
           </div>
           <div className={styles.join}>
-            {!token ? <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>: <Link to={"/profile"}>Профиль</Link>}
+            {!token ? <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>: <div className={styles.profile}> <img src={ava} alt="" /> &nbsp;&nbsp;&nbsp; <Link to={"/profile"}>Go To Profile</Link></div> }
           </div>
         </div>
       </div>
