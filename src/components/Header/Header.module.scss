@@ -1,35 +1,4 @@
-.firstBlock {
-  background: #3d0218;
-  width: 1400px;
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px 0px;
-  .itemBlock {
-    p {
-      color: grey;
-    }
-    img {
-      width: 20px;
-    }
-    color: #fff;
 
-    display: flex;
-    align-items: center;
-  }
-
-  .links {
-    img {
-      width: 23px;
-      height: 20px;
-      padding: 10px;
-    }
-    img:hover {
-      border-bottom: 2px solid #ffffff;
-    }
-  }
-}
 .blockDuo {
   display: flex;
   justify-content: center;
@@ -71,12 +40,7 @@
       color: #ffffff;
       font-size: 17px;
     }
-    a:hover {
-      border-bottom: 2px solid #ffffff;
-    }
-    a:focus {
-      border-bottom: 2px solid #ffffff;
-    }
+   
   }
   .join {
     background: #fd0054;
@@ -105,4 +69,21 @@ header {
     width: 24px;
     
   }
+}
+
+.linkNav {
+  display: flex;
+  align-items: center;
+  img {
+    width: 20px;
+  }
+}
+
+.linkNav:hover {
+  border-bottom: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+.linkNav:focus {
+  border-bottom: 2px solid #ffffff;
 }
