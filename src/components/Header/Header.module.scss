@@ -42,7 +42,7 @@
     background: #fd0054;
     color: #ffffff;
     width: 200px;
-    height: 138px;
+    height: 110px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,7 +60,7 @@
     justify-content: space-evenly;
     width: 1126px;
     background: #2b2024;
-    height: 138px;
+    height: 110px;
     align-items: center;
     a {
       text-decoration: none;
@@ -71,13 +71,12 @@
     }
     a:focus {
       border-bottom: 2px solid #ffffff;
-
     }
   }
   .join {
     background: #fd0054;
     width: 347px;
-    height: 138px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -54,7 +54,7 @@ const Header = () => {
             <h3>INTO GYM</h3>
           </div>
           <div className={styles.navbar}>
-            <Link to={"#"}>HOME</Link>
+            <Link to={"/"}>HOME</Link>
             <Link to={"#"}>PAGES</Link>
             <Link to={"#"}>PORTFOLIO</Link>
             <Link to={"#"}>CLASSES</Link>
