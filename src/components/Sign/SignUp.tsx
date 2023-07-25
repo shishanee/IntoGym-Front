@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authSignUp } from "../../features/applicationSlice";
 import { useNavigate } from "react-router-dom";
+import gym from "../../../public/home gym.webp";
+import styles from "./Sign.module.scss";
+
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -37,10 +40,10 @@ const SignUp = () => {
   }, [isSign, error, navigate]);
 
   return (
-    <div>
-      <div>
-        <div>
-          <p>Создайте аккаунт</p>
+    <div className={styles.signInMainBlock}>
+      <div className={styles.signInMain}>
+        <div className={styles.signInBlock}>
+          <h1>Создайте аккаунт</h1>
           <input
             onChange={changeName}
             value={name}
@@ -59,10 +62,12 @@ const SignUp = () => {
             type="password"
             placeholder="Введите пароль"
           />
-          <button onClick={handleRegister}>Зарегистрироваться</button>
+          <button onClick={handleRegister}>Sign Up</button>
           <br />
-
           {error}
+        </div>
+        <div className={styles.imageBlock}>
+          <img src={gym} alt="" />
         </div>
       </div>
     </div>

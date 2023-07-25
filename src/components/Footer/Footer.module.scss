@@ -30,6 +30,13 @@ footer {
 .link {
   color: #ffffff;
   text-decoration: none;
+  transition: .3s;
+}
+.link:hover {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  padding-left: 5px;
 }
 .hThree {
   color: #fd0054;
@@ -46,6 +53,8 @@ footer {
     border: 0;
     background-color: rgba(252, 246, 246, 0.2);
     padding-left: 15px;
+    color: white;
+    font-size: 14px;
   }
 
   button {
