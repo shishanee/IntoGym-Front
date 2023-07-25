@@ -1,4 +1,3 @@
-import React from 'react'
 import barbell from "../../../public/barbell.svg"
 import facebook from "../../../public/facebook.svg"
 import instagram from "../../../public/instagram.svg"
