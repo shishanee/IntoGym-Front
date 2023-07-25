@@ -33,7 +33,7 @@ const Header = () => {
             </div>
             <div className={styles.linkNav}>
             <img src={shop} alt="" />&nbsp;&nbsp;
-            <Link to={"#"}>SHOP</Link>
+            <Link to={"/shop"}>SHOP</Link>
             </div>
             <div className={styles.linkNav}>
             <img src={cart} alt="" />&nbsp;&nbsp;
