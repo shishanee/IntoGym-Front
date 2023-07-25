@@ -1,12 +1,13 @@
 import { useState } from "react";
 import styles from "./HomePage.module.scss";
 import Schedule from "../Schedule/Schedule";
+import Follow from "../Follow/Follow";
 
 const HomePage = () => {
-  const [kilogram, setKilogram] = useState("");
-  const [height, setHeight] = useState("");
-  const [result, setResult] = useState("");
-  const [bmi, setBmi] = useState("");
+  const [kilogram, setKilogram] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
+  const [result, setResult] = useState<string>('');
+  const [bmi, setBmi] = useState<string>("");
 
   const changeKilogram = (e) => {
     setKilogram(e.target.value);
@@ -77,7 +78,8 @@ const HomePage = () => {
           </button>
         </div>
         <span>{bmi}</span>
-      </div>  
+      </div>
+      <Follow />
     </div>
     </>
   );

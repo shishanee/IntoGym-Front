@@ -1,4 +1,3 @@
-import React from 'react'
 import barbell from "../../../public/barbell.svg"
 import facebook from "../../../public/facebook.svg"
 import instagram from "../../../public/instagram.svg"
@@ -18,7 +17,6 @@ function Footer() {
         <img src={barbell} alt="" />
         <h2>INTOGYM</h2>
     </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, eos impedit nam eveniet libero beatae, adipisci harum, natus ducimus blanditiis quidem voluptates rerum minima fugiat totam dignissimos quisquam dolorem!</p>
         </div>
         <div className={styles.information}>
             <h3 className={styles.hThree}>INFORMATION</h3>
@@ -43,10 +41,11 @@ function Footer() {
         <hr />
         <div className={styles.lower_info}>
             <div className={styles.contacts}>
-                <span className={styles.span}>Copyright @ 2020 All Rights Reserved.</span>
+                <span className={styles.span}>Copyright @ 2023 All Rights Reserved.</span>
                 <span className={styles.span}>+7 (989)-909-91-98 </span>
                 <span className={styles.span}>gaitukaev777@mail.ru</span>
                 <span className={styles.span}>Russia, Moscov</span>
+                <span className={styles.span}>Россия, Москва</span>
             </div>
             <div className={styles.logos}>
                 <img src={facebook} alt="" />
