@@ -1,0 +1,23 @@
+.profileBlock {
+  width: 1400px;
+  display: flex;
+  justify-content: space-evenly;
+  background: #ffffff;
+  .sideBar {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    border-right: 1px solid black;
+    button {
+      padding: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.profileMain {
+  display: flex;
+  justify-content: center;
+}
