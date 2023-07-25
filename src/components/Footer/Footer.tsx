@@ -21,21 +21,21 @@ function Footer() {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid, eos impedit nam eveniet libero beatae, adipisci harum, natus ducimus blanditiis quidem voluptates rerum minima fugiat totam dignissimos quisquam dolorem!</p>
         </div>
         <div className={styles.information}>
-            <h3>INFORMATION</h3>
-        <p><Link to={"#"}>ABOUT US</Link></p>
-        <p><Link to={"#"}>CUSTOMERS</Link></p>
-        <p><Link to={"#"}>CLIENTS</Link></p>
-        <p><Link to={"#"}>PORTFOLIO</Link></p>  
+            <h3 className={styles.hThree}>INFORMATION</h3>
+        <p><Link className={styles.link} to={"#"}>ABOUT US</Link></p>
+        <p><Link className={styles.link} to={"#"}>CUSTOMERS</Link></p>
+        <p><Link className={styles.link} to={"#"}>CLIENTS</Link></p>
+        <p><Link className={styles.link} to={"#"}>PORTFOLIO</Link></p>  
         </div>
         <div className={styles.information}>
-            <h3>SERVICES</h3>
-        <p><Link to={"#"}>TRAINING AT HOME</Link></p>
-        <p><Link to={"#"}>FITNESS FOR KIDS</Link></p>
-        <p><Link to={"#"}>ONLINE COACH</Link></p>
-        <p><Link to={"#"}>CHAMPIONS</Link></p>  
+            <h3 className={styles.hThree}>SERVICES</h3>
+        <p><Link className={styles.link} to={"#"}>TRAINING AT HOME</Link></p>
+        <p><Link className={styles.link} to={"#"}>FITNESS FOR KIDS</Link></p>
+        <p><Link className={styles.link} to={"#"}>ONLINE COACH</Link></p>
+        <p><Link className={styles.link} to={"#"}>CHAMPIONS</Link></p>  
         </div>
-        <form > 
-            <h3>SUBSCRIBE TO NEWSLETTER</h3>
+        <form className={styles.form}> 
+            <h3 className={styles.hThree}>SUBSCRIBE TO NEWSLETTER</h3>
             <input type="text" placeholder='EMAIL'/>
             <button>SUBCRIBE</button>
         </form>
@@ -43,10 +43,10 @@ function Footer() {
         <hr />
         <div className={styles.lower_info}>
             <div className={styles.contacts}>
-                <span>Copyright @ 2020 All Rights Reserved.</span>
-                <span>+7 (989)-909-91-98 </span>
-                <span>gaitukaev777@mail.ru</span>
-                <span>Чечня, Грозный</span>
+                <span className={styles.span}>Copyright @ 2020 All Rights Reserved.</span>
+                <span className={styles.span}>+7 (989)-909-91-98 </span>
+                <span className={styles.span}>gaitukaev777@mail.ru</span>
+                <span className={styles.span}>Чечня, Грозный</span>
             </div>
             <div className={styles.logos}>
                 <img src={facebook} alt="" />
