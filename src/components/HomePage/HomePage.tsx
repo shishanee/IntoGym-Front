@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./HomePage.module.scss";
+import Schedule from "../Schedule/Schedule";
 import Follow from "../Follow/Follow";
 
 const HomePage = () => {
@@ -42,6 +43,7 @@ const HomePage = () => {
   };
 
   return (
+    <>
     <div>
       <div className={styles.body}>
         <div className={styles.centerBlock}>
@@ -59,19 +61,19 @@ const HomePage = () => {
               value={kilogram}
               type="number"
               placeholder="КГ"
-            />
+              />
             <span>Рост:</span>
             <input
               onChange={changeHeight}
               value={height}
               type="number"
               placeholder="М"
-            />
+              />
           </div>
           <button
             onClick={handleClick}
             disabled={height.length === 0 && kilogram.length === 0}
-          >
+            >
             CALCULATE
           </button>
         </div>
@@ -79,6 +81,7 @@ const HomePage = () => {
       </div>
       <Follow />
     </div>
+    </>
   );
 };
 
