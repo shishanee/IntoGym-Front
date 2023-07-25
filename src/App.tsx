@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
+import Shop from "./components/Shop/Shop";
 import Schedule from "./components/Schedule/Schedule";
 import Follow from "./components/Follow/Follow";
 import { useSelector } from "react-redux";
@@ -16,6 +17,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/shop" element={<Shop />} />
         {token && <Route path="/login" element={<Navigate to={"/"} />} />}
         {token && <Route path="/sign" element={<Navigate to={"/"} />} />}
         {token && <Route path="/register" element={<Navigate to={"/"} />} />}
