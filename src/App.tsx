@@ -6,12 +6,14 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
+import Shop from "./components/Shop/Shop";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
+        <Route path="/shop" element={<Shop />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
