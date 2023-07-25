@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./HomePage.module.scss";
+import Follow from "../Follow/Follow";
 
 const HomePage = () => {
   const [kilogram, setKilogram] = useState("");
@@ -76,6 +77,7 @@ const HomePage = () => {
         </div>
         <span>{bmi}</span>
       </div>  
+        <Follow/>
     </div>
   );
 };

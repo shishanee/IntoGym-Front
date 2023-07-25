@@ -25,7 +25,6 @@
   padding-top: 80px;
   background: #8b0330;
   padding-bottom: 140px;
-  position: relative;
 }
 
 .calculate {
@@ -74,13 +73,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 1340px;
+  width: 100%;
   background: #2b2024;
   margin: 0 auto;
-  height: 130px;
-  position: absolute;
-  top: 750px;
-  left: 120px;
   span {
     padding: 10px;
     color: #ffffff;
