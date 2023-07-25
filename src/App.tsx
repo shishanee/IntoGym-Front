@@ -4,13 +4,15 @@ import SignIn from "./components/Sign/SignIn";
 import SignUp from "./components/Sign/SignUp";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
+import Sign from "./components/Sign/Sign";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/sign" element={<Sign />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
       </Routes>

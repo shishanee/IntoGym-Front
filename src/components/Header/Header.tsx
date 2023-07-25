@@ -62,7 +62,7 @@ const Header = () => {
             <Link to={"#"}>CONTACTS</Link>
           </div>
           <div className={styles.join}>
-            <Link to={"login"}>GET STARTED ❯ ❯ ❯</Link>
+            <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>
           </div>
         </div>
       </div>

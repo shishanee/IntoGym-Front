@@ -64,7 +64,7 @@ const HomePage = () => {
               onChange={changeHeight}
               value={height}
               type="number"
-              placeholder="СМ"
+              placeholder="М"
             />
           </div>
           <button
