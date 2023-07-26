@@ -2,11 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: [],
+  follow: [],
+  loading: false,
 };
 
 export const fetchUser = createAsyncThunk("fetch/uesr", async (_, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:4000/user",{
+    const res = await fetch("http://localhost:4000/user", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${thunkAPI.getState().application.token}`,
@@ -46,9 +48,14 @@ const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(fetchUser.fulfilled, (state,action) => {
-      state.user = action.payload
-    })
+      .addCase(fetchUser.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(fetchUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.follow = action.payload.follow;
+        state.loading = false;
+      });
   },
 });
 
