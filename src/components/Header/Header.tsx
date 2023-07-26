@@ -63,7 +63,7 @@ const Header = () => {
             <Link to={"#"}>PORTFOLIO</Link>
             <Link to={"#"}>CLASSES</Link>
             <Link to={"#"}>BLOG</Link>
-            <Link to={"#"}>CONTACTS</Link>
+            <Link to={"/aboutUs"}>CONTACTS</Link>
           </div>
           <div className={styles.join}>
             {!token ? <Link to={"/sign"}>GET STARTED ❯ ❯ ❯</Link>: <div className={styles.profile}> <img src={ava} alt="" /> &nbsp;&nbsp;&nbsp; <Link to={"/profile"}>Go To Profile</Link></div> }

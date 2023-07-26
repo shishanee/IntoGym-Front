@@ -9,6 +9,7 @@ import Sign from "./components/Sign/Sign";
 import Schedule from "./components/Schedule/Schedule";
 import Follow from "./components/Follow/Follow";
 import { useSelector } from "react-redux";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const token = useSelector((state) => state.application.token);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/s" element={<Schedule/>}/>
+        <Route path="/aboutUs" element={<AboutUs/>}/>
       </Routes>
       <Footer />
     </>

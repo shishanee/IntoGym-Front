@@ -1,0 +1,82 @@
+.imgBLock {
+    display: flex;
+    background-image: url("../../../public/runmen.png");
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{ 
+
+        color: #fff;
+        margin: 0;
+    }
+    p {
+        color: #fff;
+        margin: 0;
+    }
+}
+.envelope{
+    display: flex;
+    margin-top: 50px;
+    img{
+        margin-right:  20px;
+        
+    }
+}
+.contacts_block{
+    display: flex;
+    justify-content: center;
+    h3{
+      color: #fd0054;
+
+    }
+    hr{
+        border: 1px solid #fd0054;
+
+    }
+    
+}
+.send_question{
+    width: 35%;
+
+    input {
+    width: 240px;
+    padding-left: 7px;
+    margin: 6px;
+    background-color: rgba(252, 246, 246, 0.2);
+    border: 0;
+    height: 30px;
+    }
+    textarea{
+    width:500px ;
+    padding-left: 7px;
+    margin: 5px;
+    background-color: rgba(252, 246, 246, 0.2);
+    border: 0;
+    }
+    padding: 40px;
+    background-color: black;
+    h3{ 
+      color: #fd0054;
+    }
+    h2 {
+        color: #fff;
+    }
+    button {
+        width: 100px;
+        height: 40px;
+        font-size: 13px;
+        background-color: #fd0054;
+        color: #ffffff;
+        border: none;
+        margin: 5px;
+      }
+}
+.geo{
+    padding: 40px;
+    width: 35%;
+
+}
+.map{
+    padding: 60px;
+}
