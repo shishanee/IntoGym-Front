@@ -8,13 +8,15 @@ import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
 import Shop from "./components/Shop/Shop";
 import Schedule from "./components/Schedule/Schedule";
+import Follow from "./components/Follow/Follow";
+import { useSelector } from "react-redux";
+import AboutUs from "./components/AboutUs/AboutUs";
 import { useDispatch, useSelector } from "react-redux";
 import Profile from "./components/Profile/Profile";
 import Balance from "./components/Profile/SideBar/Balance";
 import SignOut from "./components/Profile/SideBar/SignOut";
 import { fetchUser } from "./features/userSlice";
 import { useEffect } from "react";
-
 
 function App() {
   const token = useSelector((state) => state.application.token);
@@ -40,6 +42,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="/s" element={<Schedule/>}/>
+        <Route path="/aboutUs" element={<AboutUs/>}/>
         <Route path="/s" element={<Schedule />} />
       </Routes>
       <Footer />
