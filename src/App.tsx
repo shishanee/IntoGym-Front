@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import SignIn from "./components/Sign/SignIn";
 import SignUp from "./components/Sign/SignUp";
@@ -8,8 +8,6 @@ import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
 import Shop from "./components/Shop/Shop";
 import Schedule from "./components/Schedule/Schedule";
-import Follow from "./components/Follow/Follow";
-import { useSelector } from "react-redux";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { useDispatch, useSelector } from "react-redux";
 import Profile from "./components/Profile/Profile";
@@ -25,7 +23,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchUser());
   }, []);
-  
+
   return (
     <>
       <Header />
