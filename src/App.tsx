@@ -15,6 +15,7 @@ import Balance from "./components/Profile/SideBar/Balance";
 import SignOut from "./components/Profile/SideBar/SignOut";
 import { fetchUser } from "./features/userSlice";
 import { useEffect } from "react";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const token = useSelector((state) => state.application.token);
@@ -35,14 +36,16 @@ function App() {
         {token && <Route path="/profile" element={<Profile />} />}
         {token && <Route path="/balance" element={<Balance />} />}
         {token && <Route path="/signout" element={<SignOut />} />}
+        {token && <Route path="/cart" element={<Cart />} />}
       </Routes>
       <Routes>
+        {!token && <Route path="/cart" element={<Navigate to={"/"} />} />}
         <Route path="/sign" element={<Sign />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
-        <Route path="/s" element={<Schedule/>}/>
-        <Route path="/aboutUs" element={<AboutUs/>}/>
+        <Route path="/s" element={<Schedule />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/s" element={<Schedule />} />
       </Routes>
       <Footer />
