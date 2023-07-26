@@ -20,7 +20,7 @@ function AboutUs() {
         <img src={envelope} alt="" />
         <div>
           <p>gaitukaev777@mail.ru</p>
-          <p>miketayson01@mail.ru</p>
+          <p>mansur72095@gmail.com</p>
         </div>
     </div>
     <div className={styles.envelope}>

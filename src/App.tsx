@@ -8,8 +8,6 @@ import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
 import Shop from "./components/Shop/Shop";
 import Schedule from "./components/Schedule/Schedule";
-import Follow from "./components/Follow/Follow";
-import { useSelector } from "react-redux";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { useDispatch, useSelector } from "react-redux";
 import Profile from "./components/Profile/Profile";
