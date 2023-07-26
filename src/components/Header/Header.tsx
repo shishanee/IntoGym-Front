@@ -1,12 +1,4 @@
 import styles from "./Header.module.scss";
-import adressImage from "../../../public/Icon material-my-location.png";
-import phone from "../../../public/Icon feather-phone.png";
-import mail from "../../../public/Icon feather-mail.png";
-import facebook from "../../../public/Icon awesome-facebook.png";
-import instagram from "../../../public/Icon awesome-instagram.png";
-import twitter from "../../../public/Icon awesome-twitter.png";
-import youtube from "../../../public/Icon awesome-youtube.png";
-import linkedin from "../../../public/Icon awesome-linkedin.png";
 import sport from "../../../public/Icon ionic-ios-fitness.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -15,6 +7,7 @@ import home from '../../../public/home.png'
 import shop from '../../../public/store (1).png'
 import cart from '../../../public/shopping-cart (1).png'
 import workout from '../../../public/gym.png'
+import about from '../../../public/file.png'
 
 const Header = () => {
   const token = useSelector((state) => state.application.token)
@@ -42,6 +35,10 @@ const Header = () => {
             <div className={styles.linkNav}>
             <img src={workout} alt="" />&nbsp;&nbsp;
             <Link to={"#"}>CART</Link>
+            </div>
+            <div className={styles.linkNav}>
+            <img src={about} alt="" />&nbsp;&nbsp;
+            <Link to={"/aboutUs"}>О Нас</Link>
             </div>
           </div>
           <div className={styles.join}>

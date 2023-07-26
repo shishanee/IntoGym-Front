@@ -1,8 +1,14 @@
+.followMain {
+  display: flex;
+  flex-direction: column;
+  background: #8b0330;
+  align-items: center;
+}
+
 .follow {
   display: flex;
   justify-content: center;
-  background: #8b0330;
-  padding: 100px 0px;
+  padding: 100px 0px 50px 0px;
 
   .price {
     display: flex;
@@ -18,13 +24,13 @@
     background: transparent;
     border: 2px solid #ffffff;
     color: white;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
   }
   button:hover {
     background: #fd0054;
     color: white;
-    border: 2px solid #fd0054
+    border: 2px solid #fd0054;
   }
 
   .block {
@@ -38,6 +44,8 @@
     background: #2b2024;
     h1 {
       color: #fd0054;
+      font-size: 20px;
+      font-weight: 500;
     }
     .followBlock {
       display: flex;
@@ -45,6 +53,53 @@
       img {
         width: 25px;
       }
+    }
+  }
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    color: black;
+  }
+  .modal__content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: green;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .trueMessage{
+      color: green;
+    }
+    button {
+      margin: 10px;
+      padding: 10px;
+      border: none;
+      background: #fd0054;
+      color: #ffffff;
+      border-radius: 3px;
+      font-weight: 500;
+      cursor: pointer;
     }
   }
 }
