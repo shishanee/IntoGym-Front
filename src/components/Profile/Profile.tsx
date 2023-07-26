@@ -1,18 +1,25 @@
 import { useSelector } from "react-redux";
 import styles from "./Profile.module.scss";
 import parseJWT from "../../helpers/parseJwt.js";
+import SideBar from "./SideBar/SideBar.js";
 
 const Profile = () => {
   const token = useSelector((state) => state.application.token);
-  console.log(parseJWT(token).follow[0])
+  const user = useSelector((state) => state.user.user);
+
   return (
-    <div className={styles.profileMain}>
-      <div className={styles.profileBlock}>
-        <div className={styles.sideBar}>
-          <button>Профиль</button>
-          <button>Выйти</button>
+    <div className={styles.mainBlock}>
+      <SideBar />
+      <div>
+        <div>{token && <h1>Здраствуйте, {user.name}</h1>}</div>
+        <div className={styles.followCheck}>
+          Ваш абонемент: &nbsp;&nbsp;{" "}
+          {user.follow ? (
+            <p className={styles.error}>У вас нет абонемента</p>
+          ) : (
+            parseJWT(token).follow[0]
+          )}
         </div>
-        <div>{token && <h1>Здраствуйте, {parseJWT(token).name}</h1>}</div>
       </div>
     </div>
   );
