@@ -62,7 +62,7 @@ const SignUp = () => {
             type="password"
             placeholder="Введите пароль"
           />
-          <button onClick={handleRegister}>Зарегистрироваться</button>
+          <button onClick={handleRegister}>Sign Up</button>
           <br />
           {error}
         </div>

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFollow } from "../../features/followSlice";
 import checked from "../../../public/check (1).png";
-import crossed from "../../../public/crossed.png";
+import crossed from "../../../public/close.png";
 import styles from "./Follow.module.scss";
 
 const Follow = () => {
@@ -41,7 +41,7 @@ const Follow = () => {
                 )}
               </div>
               <div className={styles.followBlock}>
-                Сауна: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                Сауна: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
                 {item.sauna === true ? (
                   <img src={checked} alt="" />
                 ) : (

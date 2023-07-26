@@ -50,7 +50,7 @@ const SignIn = () => {
             type="password"
             placeholder="Password"
           />
-          <button onClick={handleLogin}>Войти</button>
+          <button onClick={handleLogin}>Sign In</button>
           <br />
           {error}
         </div>

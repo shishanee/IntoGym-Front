@@ -7,9 +7,9 @@ const Sign = () => {
     <div className={styles.signMain}>
       <div className={styles.signBlock}>
         <div className={styles.links}>
-          <Link to={"/register"}>Регистрация</Link>
-          <span>или</span>
-          <Link to={"/login"}>Вход</Link>
+          <Link to={"/register"}>Sign Up</Link>
+          <span>or</span>
+          <Link to={"/login"}>Sign In</Link>
         </div>
         <div className={styles.imageBlock}>
           <img src={gym} alt="" />
