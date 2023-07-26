@@ -2,7 +2,57 @@
     display: flex;
     justify-content: space-around;
     margin: 50px;
-    flex-direction: column;
+
+    .products{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 900px;
+
+        .pagination{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+
+            .lin{
+                padding: 8px 12px;
+                text-decoration: none;
+                color: #333;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin: 0 5px;
+                transition: background-color 0.2s ease;
+            }
+
+            .lin:active{
+                background-color: #007bff;
+                color: #fff;
+                border: 1px solid #007bff;
+            }
+            .lin:hover{
+                background-color: #f0f0f0;
+            }
+
+            .disabled{
+                padding: 8px 12px;
+                text-decoration: none;
+                color: #333;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin: 0 5px;
+                transition: background-color 0.2s ease;
+                pointer-events: none;
+            }
+        }
+
+        .sortBy{
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 204px 30px 30px;
+        }
+    
 
     .blockForCard {
         display: flex;
@@ -43,10 +93,11 @@
                 };
         };
     }
-
+    }
     .categories{
         display: flex;
         flex-direction: column;
+        position: fixed;
 
         .linkk{
             text-decoration: none;
