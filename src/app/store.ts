@@ -4,6 +4,7 @@ import products from "../features/productSlice";
 import productCategory from "../features/productCategorySlice";
 import follow from "../features/followSlice";
 import user from "../features/userSlice";
+import questions from "../features/questionSlice"
 import cart from "../features/cartSlice";
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
     productCategory,
     follow,
     user,
+    questions,
     cart,
   },
 });
