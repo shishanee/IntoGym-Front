@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import "./App.css";
 import SignIn from "./components/Sign/SignIn";
 import SignUp from "./components/Sign/SignUp";
@@ -10,6 +10,7 @@ import Shop from "./components/Shop/Shop";
 import Schedule from "./components/Schedule/Schedule";
 import Follow from "./components/Follow/Follow";
 import { useSelector } from "react-redux";
+import CategoryPage from "./components/Shop/CategoryPage";
 
 function App() {
   const token = useSelector((state) => state.application.token);
