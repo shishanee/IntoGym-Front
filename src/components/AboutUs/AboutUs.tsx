@@ -2,8 +2,47 @@ import styles from "./AboutUs.module.scss";
 import envelope from "../../../public/envelope.svg";
 import location from "../../../public/location.svg";
 import call from "../../../public/call_FILL0_wght400_GRAD0_opsz48.svg";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import  { questionCreate } from "../../features/questionSlice";
+import galka from "../../../public/galka.svg"
 
 function AboutUs() {
+  const [fullName, setFullName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [subjects, setSubjects] = useState();
+  const [message, setMessage] = useState();
+  const [mes, setMes] = useState("");
+
+  const dispatch = useDispatch();
+
+  const changeFullname = (e) => {
+    setFullName(e.target.value);
+  };
+  const changeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const changePhone = (e) => {
+    setPhone(e.target.value);
+  };
+  const changeSubjects = (e) => {
+    setSubjects(e.target.value);
+  };
+  const changeMessage = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSumbit = () => {
+    dispatch(questionCreate({ fullName, email, phone, subjects, message }));
+    setFullName("");
+    setEmail("");
+    setPhone("");
+    setSubjects("");
+    setMessage("");
+    setMes("Ваше сообщение успешно отправлено!");
+  };
+
   return (
     <>
       <div className={styles.imgBLock}>
@@ -39,19 +78,51 @@ function AboutUs() {
           <h3>- CONTACT US</h3>
           <h2>SEND YOUR QUESTIONS !</h2>
           <div>
-            <input type="text" placeholder="FULL NAME" />
-            <input type="text" placeholder="EMAIL" /> <br />
-            <input type="text" placeholder="PHONE" />
-            <input type="text" placeholder="SUBJECTS" />
+            <input
+              type="text"
+              onChange={changeFullname}
+              value={fullName}
+              placeholder="FULL NAME"
+            />
+            <input
+              type="text"
+              onChange={changeEmail}
+              value={email}
+              placeholder="EMAIL"
+            />{" "}
+            <br />
+            <input
+              type="text"
+              onChange={changePhone}
+              value={phone}
+              placeholder="PHONE"
+            />
+            <input
+              type="text"
+              onChange={changeSubjects}
+              value={subjects}
+              placeholder="SUBJECTS"
+            />
           </div>
           <textarea
+            onChange={changeMessage}
+            value={message}
             name=""
             id=""
             cols="45"
             rows="10"
             placeholder="MESSAGE"
           ></textarea>
-          <button>SEND EMAIL</button>
+          <button
+            disabled={!fullName || !email || !phone || !message || !subjects}
+            onClick={handleSumbit}
+          >
+            SEND EMAIL
+          </button>
+          {mes && <div className={styles.mesBlock}>
+            <img src={galka} alt="" />
+            <span className={styles.mes}>{mes}</span>
+            </div>}
         </div>
       </div>
       <div

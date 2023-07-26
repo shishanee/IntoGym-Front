@@ -47,9 +47,11 @@
     background-color: rgba(252, 246, 246, 0.2);
     border: 0;
     height: 30px;
+    color: #fff;
     }
     textarea{
     width:500px ;
+    color: #fff;
     padding-left: 7px;
     margin: 5px;
     background-color: rgba(252, 246, 246, 0.2);
@@ -63,6 +65,9 @@
     h2 {
         color: #fff;
     }
+    .mes {
+        color: #fff;
+    }
     button {
         width: 100px;
         height: 40px;
@@ -71,6 +76,13 @@
         color: #ffffff;
         border: none;
         margin: 5px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      button:disabled {
+        cursor: not-allowed;
+        background: #fd0054;
+        color: rgb(157, 155, 155);  
       }
 }
 .geo{
@@ -80,4 +92,14 @@
 }
 .map{
     padding: 60px;
+}
+.mesBlock{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    img{
+        filter: invert(1);
+        width: 30px;
+    }
 }
