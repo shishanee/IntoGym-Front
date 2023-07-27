@@ -40,7 +40,28 @@ export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-  reducers: {},
+  reducers: {
+    decrement(state, action) {
+      state.cart = state.cart.map((item) => {
+        if (item.product._id === action.payload) {
+          if (item.amount > 1) {
+            item.amount--;
+          }
+        }
+        return item;
+      });
+    },
+    increment(state, action) {
+      state.cart = state.cart.map((item) => {
+        if (item.product._id === action.payload) {
+          if (item.amount < item.product.inStock) {
+            item.amount++;
+          }
+        }
+        return item;
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCart.fulfilled, (state, action) => {
@@ -52,5 +73,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { increment } = cartSlice.actions;
+export const { decrement, increment } = cartSlice.actions;
 export default cartSlice.reducer;
