@@ -37,7 +37,7 @@ export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
   }
 });
 
-const followSlice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {},
@@ -52,4 +52,5 @@ const followSlice = createSlice({
   },
 });
 
-export default followSlice.reducer;
+export const { increment } = cartSlice.actions;
+export default cartSlice.reducer;
