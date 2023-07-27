@@ -20,7 +20,7 @@ function Footer() {
         </div>
         <div className={styles.information}>
             <h3 className={styles.hThree}>INFORMATION</h3>
-        <p><Link className={styles.link} to={"#"}>ABOUT US</Link></p>
+        <p><Link className={styles.link} to={"/aboutUs"}>ABOUT US</Link></p>
         <p><Link className={styles.link} to={"#"}>CUSTOMERS</Link></p>
         <p><Link className={styles.link} to={"#"}>CLIENTS</Link></p>
         <p><Link className={styles.link} to={"#"}>PORTFOLIO</Link></p>  

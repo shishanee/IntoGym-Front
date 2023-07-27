@@ -41,7 +41,7 @@ const questionSlice = createSlice({
       })
       .addCase(questionCreate.rejected, (state, action) => {
         state.error = action.payload;
-        state.loading - true;
+        state.loading = true;
       })
       .addCase(questionCreate.fulfilled, (state) => {
         state.loading = false;
