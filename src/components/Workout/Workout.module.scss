@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+.articleCard {
+  width: 300px;
+}
+.articleMap {
+  display: flex;
+  margin: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  margin: 40px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #444;
+  padding: 30px;
+}
+.image{
+  width: 600px;
+}
+
+.p{
+  width: 95%;
+  text-align: start;
+  margin: auto;
+  line-height: 1.6;
+  padding: 10px;
+}
+.card {
+  position: relative;
+  background: #333;
+  width: 90%;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #aaa;
+  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+    0 0 1rem rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.card__image_container {
+  margin: -2rem -2rem 1rem -2rem;
+}
+
+.card__line {
+  opacity: 0;
+  animation: LineFadeIn .8s .8s forwards ease-in;
+}
+
+.card__image {
+  opacity: 0;
+  animation: ImageFadeIn .8s 1.4s forwards;
+}
+
+.card__title {
+  text-align: center;
+  padding: 40px;
+  color: white;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.card__content {
+  margin-top: -1rem;
+  opacity: 0;
+  animation: ContentFadeIn .8s 1.6s forwards;
+}
+
+.card__svg {
+  position: absolute;
+  left: 0;
+  top: 115px;
+}
+
+@keyframes LineFadeIn {
+  0% {
+    opacity: 0;
+    d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+    stroke: #fff;
+  }
+
+  50% {
+    opacity: 1;
+    d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+    stroke: #888BFF;
+  }
+
+  100% {
+    opacity: 1;
+    d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+    stroke: #545581;
+  }
+}
+
+@keyframes ContentFadeIn {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ImageFadeIn {
+  0% {
+    transform: translate(-.5rem, -.5rem) scale(1.05);
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+
+  100% {
+    transform: translateY(0) scale(1.0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.card__title{
+  height: 400px;
+  font-size: 40px;
+
+}

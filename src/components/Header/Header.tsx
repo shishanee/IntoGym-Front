@@ -31,7 +31,7 @@ const Header = () => {
               <img src={cart} alt="" />
               &nbsp;&nbsp; CART
             </Link>
-            <Link to={"#"} className={styles.linkNav}>
+            <Link to={"/workout"} className={styles.linkNav}>
               <img src={workout} alt="" />
               &nbsp;&nbsp; WORKOUT
             </Link>

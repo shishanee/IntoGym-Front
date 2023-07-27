@@ -16,6 +16,8 @@ import SignOut from "./components/Profile/SideBar/SignOut";
 import { fetchUser } from "./features/userSlice";
 import { useEffect } from "react";
 import Cart from "./components/Cart/Cart";
+import Workout from "./components/Workout/Workout";
+import ArticleMore from "./components/Workout/ArticleMore";
 
 function App() {
   const token = useSelector((state) => state.application.token);
@@ -41,12 +43,12 @@ function App() {
       <Routes>
         {!token && <Route path="/cart" element={<Navigate to={"/"} />} />}
         <Route path="/sign" element={<Sign />} />
+        <Route path="/workout" element={<Workout />} />
+        <Route path="/:id" element={<ArticleMore />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
-        <Route path="/s" element={<Schedule />} />
         <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/s" element={<Schedule />} />
       </Routes>
       <Footer />
     </>
