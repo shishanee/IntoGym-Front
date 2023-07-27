@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Shop.module.scss";
-import MenuOp from "./MenuOp";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../features/productSlice";
+import { addRating, fetchProducts } from "../../features/productSlice";
 import { fetchProductCategory } from "../../features/productCategorySlice";
 import Pagination from "./Pagination";
 import Cardd from "./Card";
@@ -18,6 +17,10 @@ const Products = () => {
   const firstIndex = lastIndex - maxItems;
 
   const currentProducts = products.slice(firstIndex, lastIndex);
+
+  const ratingAdd = (id) => {
+    dispatch(addRating(id));
+  };
 
   const nextPage = () => {
     setCurrentPage((prev) => prev + 1);
@@ -38,20 +41,110 @@ const Products = () => {
     dispatch(fetchProducts()), dispatch(fetchProductCategory());
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState("");
+
+  const handleOpenPopup = () => {
+    setIsOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+      setChecked(false);
+    }, 150);
+  };
+
+  const handleSortOption = (option) => {
+    setName(option);
+    handleClosePopup();
+    setChecked(true);
+  };
+
+  function sortByRating(a, b) {
+    return b.rating - a.rating;
+  }
+
+  function sortByExpensive(a, b) {
+    return b.price - a.price;
+  }
+
+  function sortByPoor(a, b) {
+    return a.price - b.price;
+  }
+
+  const popularProducts = products.slice().sort(sortByRating).slice(firstIndex, lastIndex);
+  const expensiveProducts = products.slice().sort(sortByExpensive).slice(firstIndex, lastIndex);
+  const poorProducts = products.slice().sort(sortByPoor).slice(firstIndex, lastIndex);
+
   return (
     <div className={styles.products}>
       <div className={styles.sortBy}>
+
+
         <div>
-        Показано: {firstIndex + 1}/
+          Показано: {firstIndex + 1}/
           {lastIndex > products.length ? products.length : lastIndex}
         </div>
-        <div className={styles.menuOp}>
-          <MenuOp />
+
+
+
+        <div onBlur={handleClosePopup} className={styles.blockForAll}>
+      {!isOpen ? (
+        <button className={styles.butOne} onClick={handleOpenPopup}>
+          <p>Сортировать</p>
+
+          <button className={styles.butDown}> ▼ </button>
+        </button>
+      ) : (
+        <button className={styles.butOne} onClick={handleClosePopup}>
+          <p>Сортировать</p>
+          <button className={styles.butDown}> ▲ </button>
+        </button>
+      )}
+      {isOpen && (
+        <div className={styles.blockForButs}>
+          <button
+            className={styles.butPop}
+            onClick={() => handleSortOption("По популярности")}
+          >
+            По популярности
+          </button>
+          <button
+            className={styles.butPop}
+            onClick={() => handleSortOption("По возрастанию цены")}
+          >
+            По возрастанию цены
+          </button>
+          <button
+            className={styles.butPop}
+            onClick={() => handleSortOption("По убыванию цены")}
+          >
+            По убыванию цены
+          </button>
+          <button
+            className={styles.butPop}
+            onClick={() => handleSortOption("По умолчанию")}
+          >
+            По умолчанию
+          </button>
         </div>
+      )}
+    </div>
+          
+
+
       </div>
 
       <div className={styles.blockForCard}>
-        {currentProducts.map((item) => {
+        {
+        (
+        name === "" || name === "По умолчанию" ? currentProducts : 
+        name === "По популярности" ? popularProducts :
+        name === "По возрастанию цены" ? poorProducts :
+        name === "По убыванию цены" ? expensiveProducts : []
+        )
+        .map((item) => {
           return (
             <div key={item._id} className={styles.photoBl}>
               <Cardd
@@ -59,6 +152,7 @@ const Products = () => {
                 image={item.image}
                 name={item.name}
                 price={`${item.price} RUB`}
+                ratingAdd={ratingAdd}
               />
             </div>
           );
@@ -78,7 +172,7 @@ const Products = () => {
           paginate={paginate}
         />
         <Link
-        to={"/shop"}
+          to={"/shop"}
           className={
             lastIndex >= products.length ? styles.disabled : styles.lin
           }
