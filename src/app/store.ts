@@ -11,6 +11,6 @@ export const store = configureStore({
     products,
     productCategory,
     follow,
-    user,
+    user
   },
 });

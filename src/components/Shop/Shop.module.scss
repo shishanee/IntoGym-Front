@@ -26,8 +26,8 @@
                 transition: background-color 0.2s ease;
             }
 
-            .lin:active{
-                background-color: #007bff;
+            .lin :active{
+                background: #007bff;
                 color: #fff;
                 border: 1px solid #007bff;
             }
@@ -51,6 +51,56 @@
             display: flex;
             justify-content: space-between;
             margin: 30px 204px 30px 30px;
+
+            .blockForAll {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                z-index: 12;
+                left: 775px;
+                top: 175px;
+            
+                .butOne {
+                    border: 1px solid #a2a0a0;
+                    padding: 3px 5px;
+                    background: #ffff;
+                    color: #dad7d7;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 140px;
+                    height: 45px;
+            
+                    .butDown {
+                        border: none;
+                        background: #FFFF;
+                    }
+                }
+            
+                .blockForButs {
+                    display: flex;
+                    flex-direction: column;
+                    width: 140px;
+            
+                    .butPop {
+                        border: 0.2px solid #968888;
+                        padding: 3px 5px;
+                        background: #000000;
+                        color: #ffff;
+                        padding: 10px 10px;
+                        height: 45px;
+                    }
+            
+                    .butPop:hover {
+                        border: 0.2px solid #968888;
+                        padding: 3px 5px;
+                        background: #0544ff;
+                        color: #ffff;
+                        padding: 10px 10px;
+                        height: 45px;
+                    }
+                }
+            }
         }
     
 
@@ -91,19 +141,32 @@
                 margin-top: 20px;
                 cursor: pointer;
                 };
+            .disab {
+                width: 100px;
+                border-radius: 5px;
+                background: #c8c3c5;
+                color: white;
+                border: 1px solid #FD0054;
+                padding: 15px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
         };
     }
     }
     .categories{
         display: flex;
         flex-direction: column;
-        position: fixed;
 
         .linkk{
             text-decoration: none;
             color: black;
             margin-top: 10px;
         }
+    }
+    .imgCat {
+        height: 70px;
+        object-fit: contain;
     }
 }
 

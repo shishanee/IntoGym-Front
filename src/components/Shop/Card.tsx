@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import styles from "./Shop.module.scss"
 
 const { Meta } = Card;
 
-const Cardd: React.FC = ({id, image, name, price}) => (
+const Cardd: React.FC = ({id, image, name, price, ratingAdd }) => {
+  return(
   <Card
     className={styles.card}
     hoverable
@@ -13,9 +14,11 @@ const Cardd: React.FC = ({id, image, name, price}) => (
   >
     <div>
     <Meta className={styles.meta} title={price} description={name} />
-    <button  className={styles.but}>В корзину</button>
+    <button onClick={() => ratingAdd(id) } className={styles.but}>В корзину</button>
     </div>
   </Card>
-);
+   )
+  }
+;
 
 export default Cardd;

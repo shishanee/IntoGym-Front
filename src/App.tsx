@@ -15,6 +15,7 @@ import Balance from "./components/Profile/SideBar/Balance";
 import SignOut from "./components/Profile/SideBar/SignOut";
 import { fetchUser } from "./features/userSlice";
 import { useEffect } from "react";
+import SortProducts from "./components/Shop/SortProducts";
 
 function App() {
   const token = useSelector((state) => state.application.token);
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/shop" element={<Shop />} />
+        <Route path="/rating" element={<SortProducts />} />
         {token && <Route path="/login" element={<Navigate to={"/"} />} />}
         {token && <Route path="/sign" element={<Navigate to={"/"} />} />}
         {token && <Route path="/register" element={<Navigate to={"/"} />} />}
