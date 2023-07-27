@@ -1,38 +1,31 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    products: [],
-    loading: false,
-    error: null
+  products: [],
+  loading: false,
+  error: null,
 };
 
 export const fetchProducts = createAsyncThunk(
-    "products/fetch",
-    async (_, thunkAPI: any) => {
-      try {
-        const res = await fetch("http://localhost:4000/product");
-        const data = await res.json();
-  
-        return data;
-      } catch (e) {
-        thunkAPI.rejectWithValue(e);
-      }
-    }
-  );
+  "products/fetch",
+  async (_, thunkAPI: any) => {
+    try {
+      const res = await fetch("http://localhost:4000/product");
+      const data = await res.json();
 
-  export const fetchCategoryProduct = createAsyncThunk(
-    'product/fetch',
-    async (id, thunkAPI: any) => {
-      try {
-        const res = await fetch (`http://localhost:4000/product/${id}`)
-        const data = await res.json();
-  
-        return data;
-      } catch (e) {
-        thunkAPI.rejectWithValue(e);
-      }
+      return data;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
     }
-  )
+  }
+);
+
+export const fetchCategoryProduct = createAsyncThunk(
+  "product/fetch",
+  async (id, thunkAPI: any) => {
+    try {
+      const res = await fetch(`http://localhost:4000/product/${id}`);
+      const data = await res.json();
 
   export const addRating = createAsyncThunk(
     "rating/add", 
@@ -79,4 +72,4 @@ export const fetchProducts = createAsyncThunk(
         })
     }})
 
-    export default productsSlice.reducer;
+export default productsSlice.reducer;

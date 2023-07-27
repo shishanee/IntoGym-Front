@@ -21,4 +21,5 @@ const Cardd: React.FC = ({id, image, name, price, ratingAdd }) => {
   }
 ;
 
+
 export default Cardd;

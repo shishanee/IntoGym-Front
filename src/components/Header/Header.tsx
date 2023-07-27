@@ -27,13 +27,13 @@ const Header = () => {
               <img src={shop} alt="" />
               &nbsp;&nbsp; SHOP
             </Link>
-            <Link to={"#"} className={styles.linkNav}>
+            <Link to={"/cart"} className={styles.linkNav}>
               <img src={cart} alt="" />
-              &nbsp;&nbsp; WORKOUT
+              &nbsp;&nbsp; CART
             </Link>
             <Link to={"#"} className={styles.linkNav}>
               <img src={workout} alt="" />
-              &nbsp;&nbsp; CART
+              &nbsp;&nbsp; WORKOUT
             </Link>
             <Link to={"/aboutUs"} className={styles.linkNav}>
               <img src={about} alt="" />

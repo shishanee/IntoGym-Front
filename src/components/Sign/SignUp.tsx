@@ -14,7 +14,7 @@ const SignUp = () => {
   const error = useSelector((state) => state.application.error);
   const [isSign, setIsSign] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   const navigate = useNavigate();
 
   const changeLogin = (e) => {
