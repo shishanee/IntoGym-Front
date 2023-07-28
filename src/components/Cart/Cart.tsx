@@ -67,7 +67,7 @@ const Cart = () => {
           <div className={styles.payBlock}>
             <p>
               Итого: &nbsp;
-              {cart.reduce((acc, item) => acc + item.price, 0)} ₽
+              {cart.reduce((acc, item) => acc + item.price * item.amount, 0)} ₽
             </p>
             <button>Оплатить</button>
           </div>
