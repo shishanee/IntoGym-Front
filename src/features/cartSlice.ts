@@ -94,13 +94,9 @@ const cartSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(deleteCart.fulfilled, (state, action) => {
-        state.cart = state.cart.map((item) => {
-          if (item._id !== action.payload._id) {
-            return item
-          }
-          return item
-        });
+        state.cart = state.cart.filter((item) => item._id !== action.meta.arg);
       })
+      
       .addCase(getCart.fulfilled, (state, action) => {
         state.cart = action.payload.cart;
       })

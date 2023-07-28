@@ -7,6 +7,7 @@ import cartImg from "../../../public/shopping-cart (1).png";
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
 
+  console.log(cart)
   const dispatch = useDispatch();
 
   const handlePlus = (id) => {
