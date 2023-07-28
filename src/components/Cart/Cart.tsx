@@ -1,33 +1,28 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, getCart, increment } from "../../features/cartSlice";
+import { addMinus, addPlus, deleteCart, getCart } from "../../features/cartSlice";
 import styles from "./Cart.module.scss";
-import { useState } from "react";
 import cartImg from "../../../public/shopping-cart (1).png";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
-  const [result, setResult] = useState("");
-  const [amounts, setAmounts] = useState("");
 
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    setResult(cart.reduce((acc, item) => acc + item.product.price, 0));
-    setAmounts(cart.reduce((acc, item) => acc + item.amount, 0));
+  const handlePlus = (id) => {
+    dispatch(addPlus(id));
   };
-
-  const handleDec = (id) => {
-    dispatch(decrement(id));
-  };
-
-  const handleInc = (id) => {
-    dispatch(increment(id));
+  const handleMinus = (id) => {
+    dispatch(addMinus(id));
   };
 
   useEffect(() => {
     dispatch(getCart());
   }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteCart(id))
+  }
 
   return (
     <div className={styles.main}>
@@ -45,10 +40,13 @@ const Cart = () => {
                 <p>{item.price} ₽</p>
                 <div className={styles.col}>
                   <p>Количество:</p>
-                  <button onClick={() => handleDec(item._id)}>-</button>
+                  <button onClick={() => handleMinus(item._id)}>-</button>
                   <p>{item.amount}</p>
-                  <button onClick={() => handleInc(item._id)}>+</button>
+                  <button onClick={() => handlePlus(item._id)}>+</button>
                 </div>
+                <button onClick={() => handleDelete(item._id)} className={styles.deleteCart}>
+                  Удалить из корзины
+                </button>
               </div>
             );
           })}
@@ -58,7 +56,7 @@ const Cart = () => {
             Итого: &nbsp;
             {cart.reduce((acc, item) => acc + item.price, 0)} ₽
           </p>
-          <button onClick={handleClick}>Оплатить</button>
+          <button>Оплатить</button>
         </div>
       </div>
     </div>

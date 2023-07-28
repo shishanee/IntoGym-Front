@@ -1,12 +1,18 @@
 .oneCard {
   display: flex;
   justify-content: space-evenly;
-  width: 900px;
+  width: 800px;
   align-items: center;
+
+  height: 150px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 10px;
+  color: #ffffff;
+  background: black;
 
   img {
     width: 100px;
-    height: 150px;
   }
 }
 
@@ -20,6 +26,14 @@
     img {
       width: 40px;
     }
+ 
+  }
+  .deleteCart {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ffffff;
   }
 
   .col {
@@ -29,6 +43,7 @@
       font-size: 25px;
       border: none;
       background: none;
+      color: #ffffff;
       cursor: pointer;
       padding: 5px;
       margin: 0 15px;
@@ -41,7 +56,6 @@
   align-items: center;
   flex-direction: column;
   box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2);
-  padding: 50px 0;
 }
 
 .mainBlock {
@@ -55,6 +69,7 @@
     justify-content: center;
     align-items: center;
     width: 30%;
+    height: 200px;
     box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2);
     p {
       font-size: 24px;

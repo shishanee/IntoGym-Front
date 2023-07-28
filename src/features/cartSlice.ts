@@ -20,8 +20,57 @@ export const getCart = createAsyncThunk("cart/get", async (_, thunkAPI) => {
   }
 });
 
+export const addPlus = createAsyncThunk("add/plus", async (id, thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:4000/cartplus/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
+  }
+});
+export const addMinus = createAsyncThunk("add/minus", async (id, thunkAPI) => {
+  try {
+    const res = await fetch(`http://localhost:4000/cartminus/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const deleteCart = createAsyncThunk(
+  "delete/cart",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/cartdelete/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
-  console.log(id)
   try {
     const res = await fetch("http://localhost:4000/cart", {
       method: "PATCH",
@@ -41,38 +90,44 @@ export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-  reducers: {
-    decrement(state, action) {
-      state.cart = state.cart.map((item) => {
-        if (item.product._id === action.payload) {
-          if (item.amount > 1) {
-            item.amount--;
-          }
-        }
-        return item;
-      });
-    },
-    increment(state, action) {
-      state.cart = state.cart.map((item) => {
-        if (item.product._id === action.payload) {
-          if (item.amount < item.product.inStock) {
-            item.amount++;
-          }
-        }
-        return item;
-      });
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(deleteCart.fulfilled, (state, action) => {
+        state.cart = state.cart.map((item) => {
+          if (item._id !== action.payload._id) {
+            return item
+          }
+          return item
+        });
+      })
       .addCase(getCart.fulfilled, (state, action) => {
         state.cart = action.payload.cart;
       })
       .addCase(addCart.fulfilled, (state, action) => {
-        state.cart = state.cart.push(action.payload.cart);
+        state.cart = action.payload.cart;
+      })
+      .addCase(addPlus.fulfilled, (state, action) => {
+        state.cart = state.cart.map((item) => {
+          if (item._id === action.payload._id) {
+            if (item.amount < item.inStock) {
+              item.amount++;
+            }
+          }
+          return item;
+        });
+      })
+      .addCase(addMinus.fulfilled, (state, action) => {
+        state.cart = state.cart.map((item) => {
+          if (item._id === action.payload._id) {
+            if (item.amount > 1) {
+              item.amount--;
+            }
+          }
+          return item;
+        });
       });
   },
 });
 
-export const { decrement, increment } = cartSlice.actions;
 export default cartSlice.reducer;
