@@ -21,10 +21,11 @@ export const getCart = createAsyncThunk("cart/get", async (_, thunkAPI) => {
 });
 
 export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
+  console.log(id)
   try {
     const res = await fetch("http://localhost:4000/cart", {
       method: "PATCH",
-      body: JSON.stringify({ product: id }),
+      body: JSON.stringify({ cart: id }),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${thunkAPI.getState().application.token}`,

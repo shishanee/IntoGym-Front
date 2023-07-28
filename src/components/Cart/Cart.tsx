@@ -8,28 +8,26 @@ import cartImg from "../../../public/shopping-cart (1).png";
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
   const [result, setResult] = useState("");
+  const [amounts, setAmounts] = useState("");
+
   const dispatch = useDispatch();
-  
+
   const handleClick = () => {
     setResult(cart.reduce((acc, item) => acc + item.product.price, 0));
+    setAmounts(cart.reduce((acc, item) => acc + item.amount, 0));
   };
 
-
-
   const handleDec = (id) => {
-    dispatch(decrement(id))
-  }
+    dispatch(decrement(id));
+  };
 
   const handleInc = (id) => {
-    dispatch(increment(id))
-  }
-
+    dispatch(increment(id));
+  };
 
   useEffect(() => {
     dispatch(getCart());
   }, []);
-
-  
 
   return (
     <div className={styles.main}>
@@ -42,14 +40,14 @@ const Cart = () => {
             return (
               <div className={styles.oneCard}>
                 <p>{index + 1}.</p>
-                <img src={item.product.image} alt="" />
-                <p>{item.product.name}</p>
-                <p>{item.product.price} ₽</p>
+                <img src={item.image} alt="" />
+                <p>{item.name}</p>
+                <p>{item.price} ₽</p>
                 <div className={styles.col}>
                   <p>Количество:</p>
-                  <button onClick={() => handleDec(item.product._id)}>-</button>
+                  <button onClick={() => handleDec(item._id)}>-</button>
                   <p>{item.amount}</p>
-                  <button onClick={() => handleInc(item.product._id)}>+</button>
+                  <button onClick={() => handleInc(item._id)}>+</button>
                 </div>
               </div>
             );
@@ -58,9 +56,9 @@ const Cart = () => {
         <div className={styles.payBlock}>
           <p>
             Итого: &nbsp;
-            {cart.reduce((acc, item) => acc + item.product.price, 0)} ₽
+            {cart.reduce((acc, item) => acc + item.price, 0)} ₽
           </p>
-          <button>Оплатить</button>
+          <button onClick={handleClick}>Оплатить</button>
         </div>
       </div>
     </div>
