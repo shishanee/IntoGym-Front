@@ -1,0 +1,81 @@
+.secondBlock {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 1150px;
+  top: 175px;
+  z-index: 30;
+  background-color: #fff;
+
+  .blockForInput {
+    border: 1px solid #e1d5d5;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    padding: 4px 4px;
+    .inputFilter {
+      border: none;
+      padding: 7px 14px;
+      outline: none;
+      background-color: rgb(0, 0, 0) !important;
+      color: rgb(255, 255, 255) !important;
+    }
+    .butFilter {
+      border: none;
+      background: #fff;
+      margin-top: 5px;
+      cursor: alias;
+      background-color: rgb(0, 0, 0) !important;
+
+      .imgFilter {
+        width: 30px;
+        height: 20px;
+        object-fit: contain;
+        background-color: rgb(0, 0, 0) !important;
+      }
+    }
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+
+    .categoriesText {
+      font-size: larger;
+      margin-left: 17px;
+    }
+
+    .linkk {
+      text-decoration: none;
+      color: black;
+      margin: 20px;
+    }
+  }
+  .popularBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    .popularText {
+      font-size: larger;
+    }
+    .cardBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 120px;
+      justify-content: flex-start;
+      margin-left: 1px;
+
+      .cardOne {
+        margin-top: 15px;
+
+        .imgCat {
+          height: 70px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

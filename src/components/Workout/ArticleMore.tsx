@@ -10,7 +10,6 @@ function ArticleMore() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const filteredArticles = articles.filter((i) => i._id === id);
-  console.log(filteredArticles);
 
   useEffect(() => {
     dispatch(fetchArticle());

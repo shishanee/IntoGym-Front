@@ -1,7 +1,8 @@
 .mainShop{
     display: flex;
-    justify-content: space-around;
-    margin: 50px;
+    justify-content: space-between;
+    margin: 50px 50px 50px 110px;
+    
 
     .products{
         display: flex;
@@ -17,28 +18,54 @@
             margin-top: 20px;
 
             .lin{
+                width: 6px;
+                text-align: center;
                 padding: 8px 12px;
                 text-decoration: none;
-                color: #333;
+                color: #aca8a8;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 margin: 0 5px;
                 transition: background-color 0.2s ease;
             }
 
-            .lin :active{
-                background: #007bff;
-                color: #fff;
-                border: 1px solid #007bff;
+            .linA{
+                width: 6px;
+                text-align: center;
+                background: #ffffff;
+                padding: 8px 12px;
+                text-decoration: none;
+                color: #000000;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin: 0 5px;
+                transition: background-color 0.2s ease;
+               
+            }
+
+            .strel {
+                width: 6px;
+                text-align: center;
+                padding: 8px 12px;
+                text-decoration: none;
+                background: #000000;
+                color: #FFF;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin: 0 5px;
+                transition: background-color 0.2s ease;
             }
             .lin:hover{
-                background-color: #f0f0f0;
+                background-color: #050505;
             }
 
             .disabled{
+                width: 6px;
+                text-align: center;
                 padding: 8px 12px;
                 text-decoration: none;
-                color: #333;
+                background: #000000;
+                color: #b2b2b2;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 margin: 0 5px;
@@ -57,7 +84,7 @@
                 flex-direction: column;
                 position: absolute;
                 z-index: 12;
-                left: 775px;
+                left: 718px;
                 top: 175px;
             
                 .butOne {
@@ -68,8 +95,9 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-around;
-                    width: 140px;
-                    height: 45px;
+                    width: 180px;
+                    height: 50px;
+                    text-align: center;
             
                     .butDown {
                         border: none;
@@ -80,7 +108,7 @@
                 .blockForButs {
                     display: flex;
                     flex-direction: column;
-                    width: 140px;
+                    width: 180px;
             
                     .butPop {
                         border: 0.2px solid #968888;
@@ -93,8 +121,7 @@
             
                     .butPop:hover {
                         border: 0.2px solid #968888;
-                        padding: 3px 5px;
-                        background: #0544ff;
+                        background: #FD0054;
                         color: #ffff;
                         padding: 10px 10px;
                         height: 45px;
@@ -153,20 +180,6 @@
             }
         };
     }
-    }
-    .categories{
-        display: flex;
-        flex-direction: column;
-
-        .linkk{
-            text-decoration: none;
-            color: black;
-            margin-top: 10px;
-        }
-    }
-    .imgCat {
-        height: 70px;
-        object-fit: contain;
     }
 }
 
