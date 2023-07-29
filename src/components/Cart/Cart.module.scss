@@ -67,8 +67,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 180px;
+    width: 300px;
+    height: 220px;
     box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2);
    
     button {
@@ -109,11 +109,15 @@
     cursor: not-allowed;
   }
   p{
-    color: red;
+    color: rgba(250, 70, 70, 0.785);
   }
   a{
     font-size: 15px;
     text-decoration: underline;
+    color: black;
+  }
+  h4{
+    font-weight: 400;
   }
 }
 
