@@ -55,6 +55,10 @@ const productsSlice = createSlice({
         state.user = action.payload;
         state.follow = action.payload.follow;
         state.loading = false;
+      })
+      .addCase(addMoney.fulfilled, (state, action) => {
+        console.log(action.meta.arg.balance);
+        state.user.balance += Number(action.meta.arg.balance);
       });
   },
 });

@@ -1,10 +1,12 @@
 import SideBar from "./SideBar";
-import styles from "../Profile.module.scss";
+import styled from "../Profile.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Result } from "antd";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addMoney } from "../../../features/userSlice";
+import AddBalance from "./AddBalance";
+import styles from "./Payment.module.scss";
 
 const Balance = () => {
   const [balance, setBalance] = useState("");
@@ -21,16 +23,71 @@ const Balance = () => {
     setPay(true);
   };
   return (
-    <div className={styles.mainBlock}>
+    <div className={styled.mainBlock}>
       <SideBar />
       <div>
         {!pay ? (
-          <div className={styles.pay}>
-            {" "}
-            <p>Ваш баланс: {user.balance} </p>
-            <input value={balance} onChange={handleChange} type="number" />
-            <button onClick={handleClick}>Пополнить баланс</button>{" "}
-          </div>
+          // <div className={styles.pay}>
+          //   {" "}
+          //   <input value={balance} onChange={handleChange} type="number" />
+          //   <button onClick={handleClick}>Пополнить баланс</button>{" "}
+          // </div>
+          <>
+            <p className={styled.yourMoney}>Ваш баланс: {user.balance} </p>
+            <div className={styles.modal}>
+              <form className={styles.form}>
+                <div className={styles.separator}></div>
+                <div className={styles.credit_card_info__form}>
+                  <div className={styles.input_container}>
+                    <label for="password_field" className={styles.input_label}>
+                      Card holder full name
+                    </label>
+                    <input
+                      id="password_field"
+                      className={styles.input_field}
+                      type="text"
+                      name="input-name"
+                      title="Inpit title"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+                  <div className={styles.input_container}>
+                    <label for="password_field" className={styles.input_label}>
+                      Card Number
+                    </label>
+                    <input
+                      id="password_field"
+                      className={styles.input_field}
+                      type="number"
+                      name="input-name"
+                      title="Inpit title"
+                      placeholder="0000 0000 0000 0000"
+                    />
+                  </div>
+                  <div className={styles.input_container}>
+                    <label for="password_field" className={styles.input_label}>
+                      Введите сумму
+                    </label>
+                    <div className={styles.split}>
+                      <input
+                        id="password_field"
+                        className={styles.input_field}
+                        type="text"
+                        name="input-name"
+                        title="Expiry Date"
+                        placeholder=""
+                        value={balance}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button disabled={balance.length === 0} onClick={handleClick} className={styles.purchase__btn}>
+                  Checkout
+                </button>
+              </form>
+            </div>
+          </>
         ) : (
           <Result
             status="success"
