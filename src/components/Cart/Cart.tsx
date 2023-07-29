@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
 
-  console.log(cart);
   const dispatch = useDispatch();
 
   const handlePlus = (id) => {
