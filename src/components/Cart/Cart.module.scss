@@ -68,11 +68,9 @@
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 200px;
+    height: 180px;
     box-shadow: 0px 0px 14px 0px rgba(34, 60, 80, 0.2);
-    p {
-      font-size: 24px;
-    }
+   
     button {
       padding: 10px;
       font-size: 20px;
@@ -100,3 +98,22 @@
     color: grey;
   }
 }
+
+.errorMessage {
+  color: red;
+}
+
+.payBlock {
+  button:disabled {
+    background: rgba(0, 0, 0, 0.685);
+    cursor: not-allowed;
+  }
+  p{
+    color: red;
+  }
+  a{
+    font-size: 15px;
+    text-decoration: underline;
+  }
+}
+
