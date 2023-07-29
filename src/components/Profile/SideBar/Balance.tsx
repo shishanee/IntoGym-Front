@@ -13,12 +13,11 @@ const Balance = () => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    if(e.target.value !== '-')
-    setBalance(e.target.value);
+    if (e.target.value !== "-") setBalance(e.target.value);
   };
 
   const handleClick = () => {
-      dispatch(addMoney({ balance }));
+    dispatch(addMoney({ balance }));
     setPay(true);
   };
   return (
