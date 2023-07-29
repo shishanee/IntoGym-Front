@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Shop.module.scss";
 import { Link } from "react-router-dom";
 
-const Pagination = ({ productsPage, totalProducts, paginate }) => {
+const Pagination = ({ productsPage, totalProducts, paginate, currentPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPage); i++) {
@@ -11,12 +11,12 @@ const Pagination = ({ productsPage, totalProducts, paginate }) => {
 
   return (
     <>
-      {pageNumbers.map((number) => {
+      {pageNumbers.map((number, index) => {
         return (
           <Link
             key={number}
             to={"/shop"}
-            className={styles.lin}
+            className={(number === currentPage) ? styles.linA : styles.lin}
             onClick={() => paginate(number)}
           >
             {number}

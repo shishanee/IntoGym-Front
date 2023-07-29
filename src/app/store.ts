@@ -7,6 +7,7 @@ import user from "../features/userSlice";
 import questions from "../features/questionSlice"
 import cart from "../features/cartSlice";
 import workout from "../features/wortkoutSlice"
+import search from "../features/searchSlice";
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     user,
     questions,
     cart,
-    workout
+    workout,
+    search
   },
 });

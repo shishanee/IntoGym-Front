@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import styles from "./Shop.module.scss";
-import { Link } from "react-router-dom";
 import Products from "./Products";
 import Categories from "./Categories";
 
-const Shop = () => {
+const Shop: React.FC = () => {
   return (
     <div className={styles.mainShop}>
         <Products />

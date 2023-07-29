@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
-import styles from "./Shop.module.scss"
+import styles from "./Categories.module.scss"
 
 const { Meta } = Card;
 
