@@ -5,12 +5,9 @@
   align-items: center;
 
   height: 150px;
-  border: 1px solid black;
   padding: 10px;
   margin: 10px 10px;
-  color: #ffffff;
-  background: black;
-
+  color: black;
   img {
     width: 100px;
   }
@@ -32,7 +29,7 @@
     background: transparent;
     cursor: pointer;
     text-decoration: underline;
-    color: #ffffff;
+    color: black;
   }
 
   .col {
@@ -42,7 +39,7 @@
       font-size: 25px;
       border: none;
       background: none;
-      color: #ffffff;
+      color: black;
       cursor: pointer;
       padding: 5px;
       margin: 0 15px;
