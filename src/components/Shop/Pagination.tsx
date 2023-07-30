@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./Shop.module.scss";
 import { Link } from "react-router-dom";
 
@@ -16,7 +15,7 @@ const Pagination = ({ productsPage, totalProducts, paginate, currentPage }) => {
           <Link
             key={number}
             to={"/shop"}
-            className={(number === currentPage) ? styles.linA : styles.lin}
+            className={number === currentPage ? styles.linA : styles.lin}
             onClick={() => paginate(number)}
           >
             {number}

@@ -5,7 +5,7 @@ import Article from "./Article";
 import styles from "./Workout.module.scss";
 import { Link } from "react-router-dom";
 
-function Workout() {
+const Workout: React.FC = () => {
   const article = useSelector((state) => state.workout.article);
 
   const dispatch = useDispatch();
@@ -29,6 +29,6 @@ function Workout() {
       })}
     </div>
   );
-}
+};
 
 export default Workout;

@@ -1,16 +1,13 @@
 import styles from "./Payment.module.scss";
 
-const AddBalance = () => {
+const AddBalance: React.FC = () => {
   return (
     <div className={styles.modal}>
       <form className={styles.form}>
-        <div className={styles.separator}>
-        </div>
+        <div className={styles.separator}></div>
         <div className={styles.credit_card_info__form}>
           <div className={styles.input_container}>
-            <label for="password_field" className={styles.input_label}>
-              Card holder full name
-            </label>
+            <label className={styles.input_label}>Card holder full name</label>
             <input
               id="password_field"
               className={styles.input_field}
@@ -21,9 +18,7 @@ const AddBalance = () => {
             />
           </div>
           <div className={styles.input_container}>
-            <label for="password_field" className={styles.input_label}>
-              Card Number
-            </label>
+            <label className={styles.input_label}>Card Number</label>
             <input
               id="password_field"
               className={styles.input_field}
@@ -34,9 +29,7 @@ const AddBalance = () => {
             />
           </div>
           <div className={styles.input_container}>
-            <label for="password_field" className={styles.input_label}>
-              Expiry Date / CVV
-            </label>
+            <label className={styles.input_label}>Expiry Date / CVV</label>
             <div className={styles.split}>
               <input
                 id="password_field"

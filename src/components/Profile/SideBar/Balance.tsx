@@ -7,7 +7,7 @@ import { useState } from "react";
 import { addMoney } from "../../../features/userSlice";
 import styles from "./Payment.module.scss";
 
-const Balance = () => {
+const Balance: React.FC = () => {
   const [balance, setBalance] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [pay, setPay] = useState(false);
@@ -51,7 +51,7 @@ const Balance = () => {
                     />
                   </div>
                   <div className={styles.input_container}>
-                    <label for="password_field" className={styles.input_label}>
+                    <label className={styles.input_label}>
                       Card Number
                     </label>
                     <input
@@ -66,9 +66,7 @@ const Balance = () => {
                     />
                   </div>
                   <div className={styles.input_container}>
-                    <label className={styles.input_label}>
-                    Enter amount
-                    </label>
+                    <label className={styles.input_label}>Enter amount</label>
                     <div className={styles.split}>
                       <input
                         id="password_field"

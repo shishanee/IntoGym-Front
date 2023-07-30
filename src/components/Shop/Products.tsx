@@ -17,9 +17,6 @@ const Products: React.FC = () => {
   const lastIndex = currentPage * maxItems;
   const firstIndex = lastIndex - maxItems;
 
-  // const currentProducts = products;
-  // .slice(firstIndex, lastIndex);
-
   const ratingAdd = (id) => {
     dispatch(addRating(id));
   };
@@ -42,8 +39,7 @@ const Products: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts()), 
-    dispatch(fetchProductCategory());
+    dispatch(fetchProducts()), dispatch(fetchProductCategory());
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +47,7 @@ const Products: React.FC = () => {
 
   const handleOpenPopup = () => {
     setIsOpen(true);
-    dispatch(updateQuery(""))
+    dispatch(updateQuery(""));
   };
 
   const handleClosePopup = () => {
@@ -63,7 +59,7 @@ const Products: React.FC = () => {
   const handleSortOption = (option) => {
     setName(option);
     handleClosePopup();
-    setCurrentPage(1)
+    setCurrentPage(1);
     // setChecked(true);
   };
 
@@ -79,42 +75,38 @@ const Products: React.FC = () => {
     return a.price - b.price;
   }
 
-  const popularProducts = products
-    .slice()
-    .sort(sortByRating)
-    // .slice(firstIndex, lastIndex);
-  const expensiveProducts = products
-    .slice()
-    .sort(sortByExpensive)
-    // .slice(firstIndex, lastIndex);
-  const poorProducts = products
-    .slice()
-    .sort(sortByPoor)
-    // .slice(firstIndex, lastIndex);
-      
-    const search = useSelector((state) => state.search.query);
+  const popularProducts = products.slice().sort(sortByRating);
+  // .slice(firstIndex, lastIndex);
+  const expensiveProducts = products.slice().sort(sortByExpensive);
+  // .slice(firstIndex, lastIndex);
+  const poorProducts = products.slice().sort(sortByPoor);
+  // .slice(firstIndex, lastIndex);
 
-    // const newArr = products
-    // .filter((product) => 
-    //   product.name.toLowerCase().includes(search.toLowerCase()))
+  const search = useSelector((state) => state.search.query);
 
-    const newArr = products
-  .filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
-  .map((product, index) => ({ ...product, index }));
+  // const newArr = products
+  // .filter((product) =>
+  //   product.name.toLowerCase().includes(search.toLowerCase()))
 
-    const filteredProducts = 
-    (name === "Сортировать" && search === "" || name === "По умолчанию" && search === "" 
-          ? products.slice(firstIndex, lastIndex)
-          : name === "По популярности" && search === "" 
-          ? popularProducts.slice(firstIndex, lastIndex)
-          : name === "По возрастанию цены" && search === "" 
-          ? poorProducts.slice(firstIndex, lastIndex)
-          : name === "По убыванию цены" && search === "" 
-          ? expensiveProducts.slice(firstIndex, lastIndex)
-          : search !== "" 
-          ? newArr.slice(firstIndex, lastIndex) 
-          : [])
-        
+  const newArr = products
+    .filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    )
+    .map((product, index) => ({ ...product, index }));
+
+  const filteredProducts =
+    (name === "Сортировать" && search === "") ||
+    (name === "По умолчанию" && search === "")
+      ? products.slice(firstIndex, lastIndex)
+      : name === "По популярности" && search === ""
+      ? popularProducts.slice(firstIndex, lastIndex)
+      : name === "По возрастанию цены" && search === ""
+      ? poorProducts.slice(firstIndex, lastIndex)
+      : name === "По убыванию цены" && search === ""
+      ? expensiveProducts.slice(firstIndex, lastIndex)
+      : search !== ""
+      ? newArr.slice(firstIndex, lastIndex)
+      : [];
 
   return (
     <div className={styles.products}>
@@ -122,11 +114,11 @@ const Products: React.FC = () => {
         <div>
           Показано: {firstIndex + 1}/
           {
-          (lastIndex > filteredProducts.length && search === "") 
-          ? products.length 
-          // : (lastIndex > filteredProducts.length && search !== "")
-          : newArr.length
-          // : lastIndex
+            lastIndex > filteredProducts.length && search === ""
+              ? products.length
+              : // : (lastIndex > filteredProducts.length && search !== "")
+                newArr.length
+            // : lastIndex
           }
         </div>
 
@@ -139,7 +131,7 @@ const Products: React.FC = () => {
             </button>
           ) : (
             <button className={styles.butOne} onClick={handleClosePopup}>
-                {name}
+              {name}
               <button className={styles.butDown}> ▲ </button>
             </button>
           )}
@@ -199,22 +191,22 @@ const Products: React.FC = () => {
         </Link>
         <Pagination
           productsPage={maxItems}
-          totalProducts={(search === "") ? products.length : newArr.length}
+          totalProducts={search === "" ? products.length : newArr.length}
           paginate={paginate}
           currentPage={currentPage}
         />
         <Link
           to={"/shop"}
           className={
-            (search === "" && lastIndex >= products.length) 
-            ? styles.disabled 
-            : (search !== "" && lastIndex >= newArr.length)
-            ? styles.disabled
-            : styles.strel
+            search === "" && lastIndex >= products.length
+              ? styles.disabled
+              : search !== "" && lastIndex >= newArr.length
+              ? styles.disabled
+              : styles.strel
           }
           onClick={nextPage}
         >
-         ›
+          ›
         </Link>
       </div>
     </div>

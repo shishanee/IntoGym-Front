@@ -4,16 +4,16 @@ import location from "../../../public/location.svg";
 import call from "../../../public/call_FILL0_wght400_GRAD0_opsz48.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import  { questionCreate } from "../../features/questionSlice";
-import galka from "../../../public/galka.svg"
+import { questionCreate } from "../../features/questionSlice";
+import galka from "../../../public/galka.svg";
 
-function AboutUs() {
-  const [fullName, setFullName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [subjects, setSubjects] = useState();
-  const [message, setMessage] = useState();
-  const [mes, setMes] = useState("");
+const AboutUs:React.FC =() => {
+  const [fullName, setFullName] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [phone, setPhone] = useState<string>();
+  const [subjects, setSubjects] = useState<string>();
+  const [message, setMessage] = useState<string>();
+  const [mes, setMes] = useState<string>("");
 
   const dispatch = useDispatch();
 
@@ -109,8 +109,6 @@ function AboutUs() {
             value={message}
             name=""
             id=""
-            cols="45"
-            rows="10"
             placeholder="MESSAGE"
           ></textarea>
           <button
@@ -119,10 +117,12 @@ function AboutUs() {
           >
             SEND EMAIL
           </button>
-          {mes && <div className={styles.mesBlock}>
-            <img src={galka} alt="" />
-            <span className={styles.mes}>{mes}</span>
-            </div>}
+          {mes && (
+            <div className={styles.mesBlock}>
+              <img src={galka} alt="" />
+              <span className={styles.mes}>{mes}</span>
+            </div>
+          )}
         </div>
       </div>
       <div
@@ -133,8 +133,6 @@ function AboutUs() {
           src="https://yandex.ru/map-widget/v1/?ll=45.692614%2C43.324616&mode=search&oid=50266658498&ol=biz&sctx=ZAAAAAgBEAAaKAoSCZ29M9qq2EZAEaX2ItqOqUVAEhIJ%2BWcG8YEdtz8ReHsQAvIlpD8iBgABAgMEBSgKOABAqZ8NSAFqAnJ1nQHNzEw9oAEAqAEAvQEEnFDawgEGwq2BobsB6gEA8gEA%2BAEAggIO0JjQvdGC0YPQutC%2B0LSKAgCSAgCaAgxkZXNrdG9wLW1hcHM%3D&sll=45.692614%2C43.324616&sspn=0.005016%2C0.002186&text=%D0%98%D0%BD%D1%82%D1%83%D0%BA%D0%BE%D0%B4&z=18.17"
           width="100%"
           height="400px"
-          frameborder="1"
-          allowfullscreen="true"
           style={{ position: "relative" }}
         ></iframe>
       </div>

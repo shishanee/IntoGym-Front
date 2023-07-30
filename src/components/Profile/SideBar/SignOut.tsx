@@ -4,7 +4,7 @@ import styles from "../Profile.module.scss";
 import SideBar from "./SideBar";
 import { authSignOut } from "../../../features/applicationSlice";
 
-const SignOut = () => {
+const SignOut: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
