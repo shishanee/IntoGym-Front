@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import gym from "../../../public/home gym.webp";
 import styles from "./Sign.module.scss";
 
-
 const SignUp = () => {
   const [name, setName] = useState("");
   const [login, setLogin] = useState("");
@@ -14,7 +13,7 @@ const SignUp = () => {
   const error = useSelector((state) => state.application.error);
   const [isSign, setIsSign] = useState(false);
 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const changeLogin = (e) => {
@@ -31,6 +30,7 @@ const SignUp = () => {
   const handleRegister = async () => {
     await dispatch(authSignUp({ name, login, password }));
     setIsSign(true);
+ 
   };
 
   useEffect(() => {

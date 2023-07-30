@@ -1,16 +1,18 @@
 import styles from "./Header.module.scss";
 import sport from "../../../public/Icon ionic-ios-fitness.png";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ava from "../../../public/user (1).png";
 import home from "../../../public/home.png";
 import shop from "../../../public/store (1).png";
 import cart from "../../../public/shopping-cart (1).png";
 import workout from "../../../public/gym.png";
 import about from "../../../public/file.png";
+import { createCart } from "../../features/cartSlice";
 
 const Header = () => {
   const token = useSelector((state) => state.application.token);
+  const dispatch = useDispatch()
   return (
     <header>
       <div className={styles.blockDuo}>
@@ -23,11 +25,11 @@ const Header = () => {
             <Link to={"/"} className={styles.linkNav}>
               <img src={home} alt="" /> &nbsp;&nbsp; HOME
             </Link>
-            <Link to={"/shop"} className={styles.linkNav}>
+            <Link onClick={() => dispatch(createCart())} to={"/shop"} className={styles.linkNav}>
               <img src={shop} alt="" />
               &nbsp;&nbsp; SHOP
             </Link>
-            <Link to={"/cart"} className={styles.linkNav}>
+            <Link onClick={() => dispatch(createCart())} to={"/cart"} className={styles.linkNav}>
               <img src={cart} alt="" />
               &nbsp;&nbsp; CART
             </Link>
