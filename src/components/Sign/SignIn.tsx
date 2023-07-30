@@ -6,7 +6,7 @@ import styles from "./Sign.module.scss";
 import gym from "../../../public/home gym.webp";
 
 const SignIn: React.FC = () => {
-  const error = useSelector((state) => state.application.error);
+  const error = useSelector((state: RootState) => state.application.error);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [isSign, setIsSign] = useState(false);

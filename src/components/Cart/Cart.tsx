@@ -12,7 +12,6 @@ import cartImg from "../../../public/shopping-cart (1).png";
 import basket from "../../../public/shopping-cart (2).png";
 import { Link } from "react-router-dom";
 
-
 const Cart: React.FC = () => {
   const cart = useSelector((state) => state.cart.cart);
   const message = useSelector((state) => state.cart.message);
