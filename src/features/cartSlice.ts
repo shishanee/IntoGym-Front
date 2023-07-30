@@ -109,6 +109,25 @@ export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
   }
 });
 
+export const createCart = createAsyncThunk(
+  "create/cart",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,

@@ -5,17 +5,21 @@ import { Result } from "antd";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addMoney } from "../../../features/userSlice";
-import AddBalance from "./AddBalance";
 import styles from "./Payment.module.scss";
 
 const Balance = () => {
   const [balance, setBalance] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
   const [pay, setPay] = useState(false);
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
     if (e.target.value !== "-") setBalance(e.target.value);
+  };
+
+  const cardChange = (e) => {
+    setCardNumber(e.target.value);
   };
 
   const handleClick = () => {
@@ -27,11 +31,6 @@ const Balance = () => {
       <SideBar />
       <div>
         {!pay ? (
-          // <div className={styles.pay}>
-          //   {" "}
-          //   <input value={balance} onChange={handleChange} type="number" />
-          //   <button onClick={handleClick}>Пополнить баланс</button>{" "}
-          // </div>
           <>
             <p className={styled.yourMoney}>Ваш баланс: {user.balance} </p>
             <div className={styles.modal}>
@@ -39,7 +38,7 @@ const Balance = () => {
                 <div className={styles.separator}></div>
                 <div className={styles.credit_card_info__form}>
                   <div className={styles.input_container}>
-                    <label for="password_field" className={styles.input_label}>
+                    <label className={styles.input_label}>
                       Card holder full name
                     </label>
                     <input
@@ -56,6 +55,8 @@ const Balance = () => {
                       Card Number
                     </label>
                     <input
+                      value={cardNumber}
+                      onChange={cardChange}
                       id="password_field"
                       className={styles.input_field}
                       type="number"
@@ -65,13 +66,13 @@ const Balance = () => {
                     />
                   </div>
                   <div className={styles.input_container}>
-                    <label for="password_field" className={styles.input_label}>
-                      Введите сумму
+                    <label className={styles.input_label}>
+                    Enter amount
                     </label>
                     <div className={styles.split}>
                       <input
                         id="password_field"
-                        className={styles.input_field}
+                        className={styles.balanceInput}
                         type="text"
                         name="input-name"
                         title="Expiry Date"
@@ -82,8 +83,12 @@ const Balance = () => {
                     </div>
                   </div>
                 </div>
-                <button disabled={balance.length === 0} onClick={handleClick} className={styles.purchase__btn}>
-                  Checkout
+                <button
+                  disabled={balance.length === 0 || cardNumber.length < 16}
+                  onClick={handleClick}
+                  className={styles.purchase__btn}
+                >
+                  Pay
                 </button>
               </form>
             </div>

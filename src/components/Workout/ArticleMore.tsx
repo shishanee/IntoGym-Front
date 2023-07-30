@@ -25,7 +25,6 @@ function ArticleMore() {
 
               <div className={styles.card__content}>
                 <div className={styles.title_block}>
-                  {" "}
                   <p
                     style={{ backgroundImage: `url(${item.image})` }}
                     className={styles.card__title}
