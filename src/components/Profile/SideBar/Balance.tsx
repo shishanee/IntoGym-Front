@@ -14,11 +14,11 @@ const Balance: React.FC = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value !== "-") setBalance(e.target.value);
   };
 
-  const cardChange = (e) => {
+  const cardChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCardNumber(e.target.value);
   };
 

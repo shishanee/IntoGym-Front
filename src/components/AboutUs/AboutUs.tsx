@@ -17,19 +17,19 @@ const AboutUs:React.FC =() => {
 
   const dispatch = useDispatch();
 
-  const changeFullname = (e) => {
+  const changeFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFullName(e.target.value);
   };
-  const changeEmail = (e) => {
+  const changeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  const changePhone = (e) => {
+  const changePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
   };
-  const changeSubjects = (e) => {
+  const changeSubjects = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSubjects(e.target.value);
   };
-  const changeMessage = (e) => {
+  const changeMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   };
 

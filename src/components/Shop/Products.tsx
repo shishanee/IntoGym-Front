@@ -11,8 +11,8 @@ import { updateQuery } from "../../features/searchSlice";
 const Products: React.FC = () => {
   const products = useSelector((state) => state.products.products);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [maxItems] = useState(12);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [maxItems] = useState<number>(12);
 
   const lastIndex = currentPage * maxItems;
   const firstIndex = lastIndex - maxItems;
@@ -60,7 +60,6 @@ const Products: React.FC = () => {
     setName(option);
     handleClosePopup();
     setCurrentPage(1);
-    // setChecked(true);
   };
 
   function sortByRating(a, b) {

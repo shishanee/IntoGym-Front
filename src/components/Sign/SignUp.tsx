@@ -16,14 +16,14 @@ const SignUp: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const changeLogin = (e) => {
+  const changeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLogin(e.target.value);
   };
-  const changeName = (e) => {
+  const changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const changePassword = (e) => {
+  const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 

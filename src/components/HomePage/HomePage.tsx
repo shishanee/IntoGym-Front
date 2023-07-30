@@ -9,11 +9,11 @@ const HomePage: React.FC = () => {
   const [result, setResult] = useState("");
   const [bmi, setBmi] = useState("");
 
-  const changeKilogram = (e) => {
+  const changeKilogram = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKilogram(e.target.value);
   };
 
-  const changeHeight = (e) => {
+  const changeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHeight(e.target.value);
   };
 

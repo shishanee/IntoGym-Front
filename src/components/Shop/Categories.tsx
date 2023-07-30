@@ -27,11 +27,11 @@ const Categories: React.FC = () => {
     dispatch(updateQuery(""));
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateQuery(e.target.value));
   };
 
-  const handleClickFilter = (e) => {
+  const handleClickFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
   };
 

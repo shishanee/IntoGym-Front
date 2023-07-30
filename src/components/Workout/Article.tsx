@@ -1,12 +1,9 @@
 import styles from "./Workout.module.scss";
 import React from "react";
 import { Card } from "antd";
-import { useDispatch } from "react-redux";
-
 const { Meta } = Card;
 
 const Article: React.FC = ({ id, image, info, title }) => {
-  const dispatch = useDispatch();
 
   return (
     <Card

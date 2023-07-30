@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addMinus,
@@ -11,7 +11,7 @@ import styles from "./Cart.module.scss";
 import cartImg from "../../../public/shopping-cart (1).png";
 import basket from "../../../public/shopping-cart (2).png";
 import { Link } from "react-router-dom";
-import { AppDispatch } from "../../app/store";
+
 
 const Cart: React.FC = () => {
   const cart = useSelector((state) => state.cart.cart);
