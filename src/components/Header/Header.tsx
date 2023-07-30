@@ -10,7 +10,7 @@ import workout from "../../../public/gym.png";
 import about from "../../../public/file.png";
 import { createCart } from "../../features/cartSlice";
 
-const Header = () => {
+const Header: React.FC = () => {
   const token = useSelector((state) => state.application.token);
   const dispatch = useDispatch()
   return (

@@ -1,38 +1,35 @@
-.training_schedule{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 0px;
+.training_schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
 }
 table {
-	margin-bottom: 20px;
-	border: 1px solid #dddddd;
-	border-collapse: collapse; 
-    th{
-     padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+  th {
+    padding: 16px;
     font-size: 17px;
-	background: #efefef;
-	border: 1px solid #dddddd;
-    
-    }
-    td {
+    background: #efefef;
+    border: 1px solid #dddddd;
+  }
+  td {
     padding: 16px;
     font-size: 16px;
     border: 1px solid #dddddd;
     text-align: center;
-    
-    h4 {
-    color: #fd0054;
-    margin: 0;
-       }
 
+    h4 {
+      color: #fd0054;
+      margin: 0;
     }
+  }
 }
 .time_table {
-    color: #fd0054;
-    font-weight: 500;
-
+  color: #fd0054;
+  font-weight: 500;
 }
-.training_name{
-    font-weight: 500;
+.training_name {
+  font-weight: 500;
 }

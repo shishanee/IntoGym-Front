@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticle } from "../../features/wortkoutSlice";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Workout.module.scss";
 
-function ArticleMore() {
+const ArticleMore: React.FC = () => {
   const articles = useSelector((state) => state.workout.article);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -40,6 +40,6 @@ function ArticleMore() {
       })}
     </div>
   );
-}
+};
 
 export default ArticleMore;

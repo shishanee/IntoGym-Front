@@ -3,9 +3,8 @@ import styles from "./Follow.module.scss";
 import { addFollow } from "../../features/followSlice";
 import { Link } from "react-router-dom";
 
-const ModalPop = ({ open, setOpen, id }) => {
+const ModalPop: React.FC = ({ setOpen, id }) => {
   const message = useSelector((state) => state.follow.message);
-  console.log(message);
 
   const dispatch = useDispatch();
 

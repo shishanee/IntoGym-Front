@@ -4,9 +4,9 @@ import products from "../features/productSlice";
 import productCategory from "../features/productCategorySlice";
 import follow from "../features/followSlice";
 import user from "../features/userSlice";
-import questions from "../features/questionSlice"
+import questions from "../features/questionSlice";
 import cart from "../features/cartSlice";
-import workout from "../features/wortkoutSlice"
+import workout from "../features/wortkoutSlice";
 import search from "../features/searchSlice";
 
 export const store = configureStore({
@@ -19,6 +19,6 @@ export const store = configureStore({
     questions,
     cart,
     workout,
-    search
+    search,
   },
 });

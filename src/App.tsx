@@ -7,7 +7,6 @@ import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import Sign from "./components/Sign/Sign";
 import Shop from "./components/Shop/Shop";
-import Schedule from "./components/Schedule/Schedule";
 import AboutUs from "./components/AboutUs/AboutUs";
 import { useDispatch, useSelector } from "react-redux";
 import Profile from "./components/Profile/Profile";
@@ -19,7 +18,7 @@ import Cart from "./components/Cart/Cart";
 import Workout from "./components/Workout/Workout";
 import ArticleMore from "./components/Workout/ArticleMore";
 
-function App() {
+const App: React.FC = () => {
   const token = useSelector((state) => state.application.token);
   const dispatch = useDispatch();
 
@@ -53,6 +52,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

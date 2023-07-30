@@ -6,10 +6,9 @@ import crossed from "../../../public/close.png";
 import styles from "./Follow.module.scss";
 import { useState } from "react";
 import ModalPop from "./ModalPop";
-import { message } from "antd";
 import { Link } from "react-router-dom";
 
-const Follow = () => {
+const Follow: React.FC = () => {
   const token = useSelector((state) => state.application.token);
   const [open, setOpen] = useState(false);
   const [followId, setFollowId] = useState("");
