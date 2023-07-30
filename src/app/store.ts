@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { AnyAction, Dispatch, configureStore } from "@reduxjs/toolkit";
 import application from "../features/applicationSlice";
 import products from "../features/productSlice";
 import productCategory from "../features/productCategorySlice";
@@ -22,3 +22,6 @@ export const store = configureStore({
     search,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = Dispatch<AnyAction>;

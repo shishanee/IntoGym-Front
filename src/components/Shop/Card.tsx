@@ -2,6 +2,7 @@ import { Card } from "antd";
 import styles from "./Shop.module.scss";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../features/cartSlice";
+import { Dispatch } from "redux";
 
 const { Meta } = Card;
 

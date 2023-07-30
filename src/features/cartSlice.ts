@@ -92,7 +92,7 @@ export const cartPay = createAsyncThunk(
   }
 );
 
-export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
+export const addCart = createAsyncThunk<void>("add/get", async (id, thunkAPI) => {
   try {
     const res = await fetch("http://localhost:4000/cart", {
       method: "PATCH",
