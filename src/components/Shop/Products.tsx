@@ -76,17 +76,10 @@ const Products: React.FC = () => {
   }
 
   const popularProducts = products.slice().sort(sortByRating);
-  // .slice(firstIndex, lastIndex);
   const expensiveProducts = products.slice().sort(sortByExpensive);
-  // .slice(firstIndex, lastIndex);
   const poorProducts = products.slice().sort(sortByPoor);
-  // .slice(firstIndex, lastIndex);
 
   const search = useSelector((state) => state.search.query);
-
-  // const newArr = products
-  // .filter((product) =>
-  //   product.name.toLowerCase().includes(search.toLowerCase()))
 
   const newArr = products
     .filter((product) =>
@@ -113,13 +106,9 @@ const Products: React.FC = () => {
       <div className={styles.sortBy}>
         <div>
           Показано: {firstIndex + 1}/
-          {
-            lastIndex > filteredProducts.length && search === ""
-              ? products.length
-              : // : (lastIndex > filteredProducts.length && search !== "")
-                newArr.length
-            // : lastIndex
-          }
+          {lastIndex > filteredProducts.length && search === ""
+            ? products.length
+            : newArr.length}
         </div>
 
         <div onBlur={handleClosePopup} className={styles.blockForAll}>

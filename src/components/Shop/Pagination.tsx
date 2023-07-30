@@ -10,7 +10,7 @@ const Pagination = ({ productsPage, totalProducts, paginate, currentPage }) => {
 
   return (
     <>
-      {pageNumbers.map((number, index) => {
+      {pageNumbers.map((number) => {
         return (
           <Link
             key={number}

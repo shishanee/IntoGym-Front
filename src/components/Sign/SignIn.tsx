@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Sign.module.scss";
 import gym from "../../../public/home gym.webp";
 
-const SignIn:React.FC = () => {
+const SignIn: React.FC = () => {
   const error = useSelector((state) => state.application.error);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
