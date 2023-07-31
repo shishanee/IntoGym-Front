@@ -3,8 +3,13 @@ import React from "react";
 import { Card } from "antd";
 const { Meta } = Card;
 
-const Article: React.FC = ({ id, image, info, title }) => {
+export interface InfoType {
+  image: string;
+  info: string;
+  title: string;
+}
 
+const Article: React.FC = ({ image, info, title }: InfoType) => {
   return (
     <Card
       className={styles.card}

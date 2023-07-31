@@ -1,6 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface User {
+  balance: number;
+  follow: [];
+  login: string;
+  name: string;
+  password: string;
+  __v: number;
+  _id: string;
+}
+
+interface UserState {
+  user: User[];
+  follow: [];
+  loading: boolean;
+}
+
+const initialState: UserState = {
   user: [],
   follow: [],
   loading: false,
@@ -57,7 +73,6 @@ const productsSlice = createSlice({
         state.loading = false;
       })
       .addCase(addMoney.fulfilled, (state, action) => {
-        console.log(action.meta.arg.balance);
         state.user.balance += Number(action.meta.arg.balance);
       });
   },

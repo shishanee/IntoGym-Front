@@ -35,7 +35,8 @@ const SignUp: React.FC = () => {
   };
 
   const handleRegister = async () => {
-    await dispatch(authSignUp({ name, login, password }));
+    const data: SignType = { name, login, password };
+    await dispatch(authSignUp(data));
     setIsSign(true);
   };
 

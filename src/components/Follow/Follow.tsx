@@ -70,13 +70,12 @@ const Follow: React.FC = () => {
             </div>
           );
         })}
-      
       </div>
       {!token && (
-          <Link className={styles.registerLink} to={"/register"}>
-            Зарегистрируйтесь чтобы приобрести абонемент
-          </Link>
-        )}
+        <Link className={styles.registerLink} to={"/register"}>
+          Зарегистрируйтесь чтобы приобрести абонемент
+        </Link>
+      )}
     </div>
   );
 };

@@ -12,7 +12,7 @@ import { createCart } from "../../features/cartSlice";
 
 const Header: React.FC = () => {
   const token = useSelector((state) => state.application.token);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <header>
       <div className={styles.blockDuo}>
@@ -25,11 +25,19 @@ const Header: React.FC = () => {
             <Link to={"/"} className={styles.linkNav}>
               <img src={home} alt="" /> &nbsp;&nbsp; HOME
             </Link>
-            <Link onClick={() => dispatch(createCart())} to={"/shop"} className={styles.linkNav}>
+            <Link
+              onClick={() => dispatch(createCart())}
+              to={"/shop"}
+              className={styles.linkNav}
+            >
               <img src={shop} alt="" />
               &nbsp;&nbsp; SHOP
             </Link>
-            <Link onClick={() => dispatch(createCart())} to={"/cart"} className={styles.linkNav}>
+            <Link
+              onClick={() => dispatch(createCart())}
+              to={"/cart"}
+              className={styles.linkNav}
+            >
               <img src={cart} alt="" />
               &nbsp;&nbsp; CART
             </Link>
