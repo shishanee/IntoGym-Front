@@ -1,17 +1,19 @@
 import styles from "./Workout.module.scss";
 import { Card } from "antd";
 const { Meta } = Card;
+import React from "react";
 
-interface ArticleProps {
+export interface InfoType {
   image: string;
   info: string;
   title: string;
 }
 
-const Article = ({ image, info, title }: ArticleProps) => {
+
+const Article: React.FC = ({ image, info, title }: InfoType) => {
   return (
     <Card
-      className={styles.Card}
+      className={styles.card}
       hoverable
       style={{ height: 430, width: 240 }}
       cover={<img className={styles.image} alt="example" src={image} />}

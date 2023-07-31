@@ -6,11 +6,12 @@ import {
   fetchCategoryProduct,
   fetchProducts,
 } from "../../features/productSlice";
-import CardForCat from "./CardForCat";
 import { updateQuery } from "../../features/searchSlice";
 
 const Categories: React.FC = () => {
-  const productCategory = useSelector((state) => state.productCategory.productCategory);
+  const productCategory = useSelector(
+    (state) => state.productCategory.productCategory
+  );
 
   const search = useSelector((state) => state.search.query);
 
@@ -26,11 +27,11 @@ const Categories: React.FC = () => {
     dispatch(updateQuery(""));
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateQuery(e.target.value));
   };
 
-  const handleClickFilter = (e) => {
+  const handleClickFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
   };
 
@@ -55,13 +56,14 @@ const Categories: React.FC = () => {
       <div className={styles.categories}>
         <h3 className={styles.categoriesText}>Категории: </h3>
 
-        <Link onClick={handleClickAll} className={styles.linkk}>
+        <Link to={"#"} onClick={handleClickAll} className={styles.linkk}>
           {" "}
           Все{" "}
         </Link>
         {productCategory.map((item) => {
           return (
             <Link
+              to={"#"}
               onClick={() => handleClick(item._id)}
               key={item._id}
               className={styles.linkk}

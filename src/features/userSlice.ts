@@ -21,7 +21,7 @@ export interface UserState {
   user: UserItem[],
   loading: boolean,
   follow: FollowItem[]
-}
+
 
 const initialState: UserState = {
   user: [],
@@ -80,7 +80,6 @@ const productsSlice = createSlice({
         state.loading = false;
       })
       .addCase(addMoney.fulfilled, (state, action) => {
-        console.log(action.meta.arg.balance);
         state.user.balance += Number(action.meta.arg.balance);
       });
   },

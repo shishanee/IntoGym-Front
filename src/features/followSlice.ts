@@ -18,7 +18,6 @@ export const getFollow = createAsyncThunk("get/follow", async (_, thunkAPI) => {
 export const addFollow = createAsyncThunk(
   "add/follow",
   async (id, thunkAPI) => {
-    console.log(id);
     try {
       const res = await fetch("http://localhost:4000/user", {
         method: "PATCH",

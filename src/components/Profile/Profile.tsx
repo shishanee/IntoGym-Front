@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import styles from "./Profile.module.scss";
-import parseJWT from "../../helpers/parseJwt.js";
 import SideBar from "./SideBar/SideBar.js";
 import { useState } from "react";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.user.user);
   const follow = useSelector((state) => state.user.follow);

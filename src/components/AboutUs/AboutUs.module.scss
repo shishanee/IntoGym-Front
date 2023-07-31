@@ -1,46 +1,41 @@
 .imgBLock {
-    display: flex;
-    background-image: url("../../../public/runmen.png");
-    height: 500px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 20px;
-    h1{ 
-
-        color: #fff;
-        margin: 0;
-    }
-    p {
-        color: #fff;
-        margin: 0;
-    }
+  display: flex;
+  background-image: url("../../../public/runmen.png");
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  h1 {
+    color: #fff;
+    margin: 0;
+  }
+  p {
+    color: #fff;
+    margin: 0;
+  }
 }
-.envelope{
-    display: flex;
-    margin-top: 50px;
-    img{
-        margin-right:  20px;
-        
-    }
+.envelope {
+  display: flex;
+  margin-top: 50px;
+  img {
+    margin-right: 20px;
+  }
 }
-.contacts_block{
-    display: flex;
-    justify-content: center;
-    h3{
-      color: #fd0054;
-
-    }
-    hr{
-        border: 1px solid #fd0054;
-
-    }
-    
+.contacts_block {
+  display: flex;
+  justify-content: center;
+  h3 {
+    color: #fd0054;
+  }
+  hr {
+    border: 1px solid #fd0054;
+  }
 }
-.send_question{
-    width: 35%;
+.send_question {
+  width: 35%;
 
-    input {
+  input {
     width: 240px;
     padding-left: 7px;
     margin: 6px;
@@ -48,58 +43,57 @@
     border: 0;
     height: 30px;
     color: #fff;
-    }
-    textarea{
-    width:500px ;
+  }
+  textarea {
+    width: 500px;
     color: #fff;
     padding-left: 7px;
     margin: 5px;
     background-color: rgba(252, 246, 246, 0.2);
     border: 0;
-    }
-    padding: 40px;
-    background-color: black;
-    h3{ 
-      color: #fd0054;
-    }
-    h2 {
-        color: #fff;
-    }
-    .mes {
-        color: #fff;
-    }
-    button {
-        width: 100px;
-        height: 40px;
-        font-size: 13px;
-        background-color: #fd0054;
-        color: #ffffff;
-        border: none;
-        margin: 5px;
-        cursor: pointer;
-        border-radius: 3px;
-      }
-      button:disabled {
-        cursor: not-allowed;
-        background: #fd0054;
-        color: rgb(157, 155, 155);  
-      }
+  }
+  padding: 40px;
+  background-color: black;
+  h3 {
+    color: #fd0054;
+  }
+  h2 {
+    color: #fff;
+  }
+  .mes {
+    color: #fff;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+    font-size: 13px;
+    background-color: #fd0054;
+    color: #ffffff;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    background: #fd0054;
+    color: rgb(157, 155, 155);
+  }
 }
-.geo{
-    padding: 40px;
-    width: 35%;
-
+.geo {
+  padding: 40px;
+  width: 35%;
 }
-.map{
-    padding: 60px;
+.map {
+  padding: 60px;
 }
-.mesBlock{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin-top: 5px;
-    img{
-        filter: invert(1);
-        width: 30px;
-    }
+.mesBlock {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-top: 5px;
+  img {
+    filter: invert(1);
+    width: 30px;
+  }
 }

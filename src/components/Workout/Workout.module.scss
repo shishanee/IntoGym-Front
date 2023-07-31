@@ -4,19 +4,19 @@
 }
 .articleMap {
   display: flex;
-  margin: 30px;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    margin: 30px;
+  }
 }
 .image {
   width: 200px;
   height: 200px;
   object-fit: cover;
 }
-a {
-  text-decoration: none;
-  margin: 40px;
-}
+
 .container {
   display: flex;
   align-items: center;
@@ -36,16 +36,7 @@ a {
   padding: 10px;
 }
 .card {
-  position: relative;
-  background: #333;
-  width: 90%;
-  border-radius: 10px;
-  padding: 2rem;
-  color: #aaa;
-  box-shadow:
-    0 0.25rem 0.25rem rgba(0, 0, 0, 0.2),
-    0 0 1rem rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  text-align: center;
 }
 
 .card__image_container {
@@ -143,5 +134,7 @@ a {
 
 .card__title {
   height: 400px;
+  width: 1000px;
   font-size: 40px;
+  margin: 0 auto;
 }

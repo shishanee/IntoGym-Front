@@ -1,6 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface CartInfo {
+  amount: number;
+  category: string;
+  image: string;
+  inStock: number;
+  name: string;
+  price: number;
+  rating: number;
+  __v: number;
+  _id: string;
+}
+
+interface CartState {
+  cart: CartInfo[];
+  message: null | string;
+}
+
+const initialState: CartState = {
   cart: [],
   message: null,
 };
@@ -74,7 +91,6 @@ export const deleteCart = createAsyncThunk(
 export const cartPay = createAsyncThunk(
   "cart/pay",
   async (result, thunkAPI) => {
-    console.log(result);
     try {
       const res = await fetch("http://localhost:4000/cartpay", {
         method: "PATCH",
@@ -92,22 +108,44 @@ export const cartPay = createAsyncThunk(
   }
 );
 
-export const addCart = createAsyncThunk("add/get", async (id, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:4000/cart", {
-      method: "PATCH",
-      body: JSON.stringify({ cart: id }),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
-      },
-    });
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+export const addCart = createAsyncThunk<void>(
+  "add/get",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/cart", {
+        method: "PATCH",
+        body: JSON.stringify({ cart: id }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
+
+export const createCart = createAsyncThunk(
+  "create/cart",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 const cartSlice = createSlice({
   name: "cart",

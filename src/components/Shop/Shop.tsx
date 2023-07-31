@@ -6,8 +6,8 @@ import Categories from "./Categories";
 const Shop: React.FC = () => {
   return (
     <div className={styles.mainShop}>
-        <Products />
-        <Categories />
+      <Products />
+      <Categories />
     </div>
   );
 };

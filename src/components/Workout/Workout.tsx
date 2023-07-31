@@ -18,6 +18,7 @@ function Workout() {
     dispatch(fetchArticle());
   }, []);
 
+
   return (
     <div className={styles.articleMap}>
       {article.map((item) => {
@@ -35,5 +36,6 @@ function Workout() {
     </div>
   );
 }
+
 
 export default Workout;

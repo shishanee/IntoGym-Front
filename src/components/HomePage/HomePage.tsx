@@ -3,17 +3,17 @@ import styles from "./HomePage.module.scss";
 import Schedule from "../Schedule/Schedule";
 import Follow from "../Follow/Follow";
 
-const HomePage = () => {
-  const [kilogram, setKilogram] = useState<string>('');
-  const [height, setHeight] = useState<string>('');
-  const [result, setResult] = useState<string>('');
-  const [bmi, setBmi] = useState<string>("");
+const HomePage: React.FC = () => {
+  const [kilogram, setKilogram] = useState("");
+  const [height, setHeight] = useState("");
+  const [result, setResult] = useState("");
+  const [bmi, setBmi] = useState("");
 
-  const changeKilogram = (e) => {
+  const changeKilogram = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKilogram(e.target.value);
   };
 
-  const changeHeight = (e) => {
+  const changeHeight = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHeight(e.target.value);
   };
 
@@ -44,44 +44,39 @@ const HomePage = () => {
 
   return (
     <>
-    <div>
-      <div className={styles.body}>
-        <div className={styles.centerBlock}>
-          <h3>MAKE YOUR</h3>
-          <p>BODY</p>
-        </div>
-      </div>
-      <div className={styles.calculateBlock}>
-        <div className={styles.calculate}>
-          <p>CALCULATE BMI &nbsp;</p>
-          <div className={styles.inputs}>
-            <span>Вес:</span>
-            <input
-              onChange={changeKilogram}
-              value={kilogram}
-              type="number"
-              placeholder="КГ"
-              />
-            <span>Рост:</span>
-            <input
-              onChange={changeHeight}
-              value={height}
-              type="number"
-              placeholder="М"
-              />
+      <div>
+        <div className={styles.body}>
+          <div className={styles.centerBlock}>
+            <h3>MAKE YOUR</h3>
+            <p>BODY</p>
           </div>
-          <button
-            onClick={handleClick}
-            disabled={height.length === 0 && kilogram.length === 0}
-            >
-            CALCULATE
-          </button>
         </div>
-        <span>{bmi}</span>
+        <div className={styles.calculateBlock}>
+          <div className={styles.calculate}>
+            <p>CALCULATE BMI &nbsp;</p>
+            <div className={styles.inputs}>
+              <span>Вес:</span>
+              <input
+                onChange={changeKilogram}
+                value={kilogram}
+                type="number"
+                placeholder="КГ"
+              />
+              <span>Рост:</span>
+              <input
+                onChange={changeHeight}
+                value={height}
+                type="number"
+                placeholder="М"
+              />
+            </div>
+            <button onClick={handleClick}>CALCULATE</button>
+          </div>
+          <span>{bmi}</span>
+        </div>
+        <Follow />
+        <Schedule />
       </div>
-      <Follow />
-      <Schedule/>
-    </div>
     </>
   );
 };

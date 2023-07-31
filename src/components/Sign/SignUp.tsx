@@ -6,8 +6,14 @@ import gym from "../../../public/home gym.webp";
 import styles from "./Sign.module.scss";
 import { AppDispatch, RootState } from "../../app/store";
 
+type SignType = {
+  name: string;
+  login: string;
+  password: string;
+};
 
-const SignUp = () => {
+
+const SignUp: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -16,21 +22,23 @@ const SignUp = () => {
   const [isSign, setIsSign] = useState(false);
 
   const dispatch = useDispatch<AppDispatch>(); 
+
   const navigate = useNavigate();
 
-  const changeLogin = (e) => {
+  const changeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLogin(e.target.value);
   };
-  const changeName = (e) => {
+  const changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const changePassword = (e) => {
+  const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
   const handleRegister = async () => {
-    await dispatch(authSignUp({ name, login, password }));
+    const data: SignType = { name, login, password };
+    await dispatch(authSignUp(data));
     setIsSign(true);
   };
 

@@ -6,20 +6,21 @@ import styles from "./Sign.module.scss";
 import gym from "../../../public/home gym.webp";
 import { AppDispatch, RootState } from "../../app/store";
 
-const SignIn = () => {
+const SignIn: React.FC = () => {
   const error = useSelector((state: RootState) => state.application.error);
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isSign, setIsSign] = useState<boolean>(false);
 
+
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
-  const changeLogin = (e) => {
+  const changeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLogin(e.target.value);
   };
 
-  const changePassword = (e) => {
+  const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 

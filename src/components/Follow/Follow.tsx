@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  getFollow } from "../../features/followSlice";
+import { getFollow } from "../../features/followSlice";
 import checked from "../../../public/check (1).png";
 import crossed from "../../../public/close.png";
 import styles from "./Follow.module.scss";
 import { useState } from "react";
 import ModalPop from "./ModalPop";
-import { message } from "antd";
+import { Link } from "react-router-dom";
 
-const Follow = () => {
+const Follow: React.FC = () => {
+  const token = useSelector((state) => state.application.token);
   const [open, setOpen] = useState(false);
-  const [followId, setFollowId] = useState('')
+  const [followId, setFollowId] = useState("");
   const follow = useSelector((state) => state.follow.follow);
   const dispatch = useDispatch();
 
@@ -19,8 +20,8 @@ const Follow = () => {
   }, []);
 
   const handleClick = (id) => {
-    setFollowId(id)
-    setOpen(true)
+    setFollowId(id);
+    setOpen(true);
   };
 
   return (
@@ -60,14 +61,21 @@ const Follow = () => {
                   )}
                 </div>
               </div>
-              <button onClick={() => handleClick(item._id)}>
-                Купить абонемент
-              </button>
+              {token && (
+                <button onClick={() => handleClick(item._id)}>
+                  Купить абонемент
+                </button>
+              )}
               {open && <ModalPop open={open} id={followId} setOpen={setOpen} />}
             </div>
           );
         })}
       </div>
+      {!token && (
+        <Link className={styles.registerLink} to={"/register"}>
+          Зарегистрируйтесь чтобы приобрести абонемент
+        </Link>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addMinus,
@@ -11,14 +11,14 @@ import styles from "./Cart.module.scss";
 import cartImg from "../../../public/shopping-cart (1).png";
 import basket from "../../../public/shopping-cart (2).png";
 import { Link } from "react-router-dom";
+import { AppDispatch } from "../../app/store";
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const cart = useSelector((state) => state.cart.cart);
   const message = useSelector((state) => state.cart.message);
   const balance = useSelector((state) => state.user.user);
-  const [resultPay, setResultPay] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handlePlus = (id) => {
     dispatch(addPlus(id));
@@ -36,7 +36,6 @@ const Cart = () => {
   };
 
   const handlePay = (result) => {
-    setResultPay(true);
     dispatch(cartPay(result));
   };
 
@@ -98,12 +97,15 @@ const Cart = () => {
                 Оплатить
               </button>
               {balance.balance <
-                  cart.reduce((acc, item) => acc + item.price * item.amount, 0) && 
-                  <div>
-                    <p>Недостаточно средств!</p>
-                    <Link to={'/balance'}>Пополнить счёт</Link>
-                  </div>
-                  }
+                cart.reduce(
+                  (acc, item) => acc + item.price * item.amount,
+                  0
+                ) && (
+                <div>
+                  <p>Недостаточно средств!</p>
+                  <Link to={"/balance"}>Пополнить счёт</Link>
+                </div>
+              )}
               <p className={styles.errorMessage}>{message}</p>
             </div>
           </div>

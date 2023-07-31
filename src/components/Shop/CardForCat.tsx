@@ -1,10 +1,10 @@
-import React from 'react';
-import { Card } from 'antd';
-import styles from "./Categories.module.scss"
+import React from "react";
+import { Card } from "antd";
+import styles from "./Categories.module.scss";
 
 const { Meta } = Card;
 
-const CardForCat: React.FC = ({price, image}) => (
+const CardForCat: React.FC = ({ price, image }) => (
   <Card
     hoverable
     style={{ width: 140, height: 120 }}
