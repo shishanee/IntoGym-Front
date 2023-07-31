@@ -15,7 +15,7 @@ interface CardProps {
 }
 
 const Cardd: React.FC<CardProps> = ({ id, image, name, price, ratingAdd }) => {
-  const dispatch: any = useDispatch();
+  const dispatch = useDispatch();
   
 
   const handleClick = (id: number) => {
