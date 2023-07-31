@@ -1,186 +1,189 @@
-.mainShop{
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 50px 50px 110px;
-    
+.mainShop {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 50px 50px 110px;
 
-    .products{
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 900px;
+
+    .pagination {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+
+      .lin {
+        width: 6px;
+        text-align: center;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #aca8a8;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 5px;
+        transition: background-color 0.2s ease;
+      }
+
+      .linA {
+        width: 6px;
+        text-align: center;
+        background: #ffffff;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #000000;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 5px;
+        transition: background-color 0.2s ease;
+      }
+
+      .strel {
+        width: 6px;
+        text-align: center;
+        padding: 8px 12px;
+        text-decoration: none;
+        background: #000000;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 5px;
+        transition: background-color 0.2s ease;
+      }
+      .lin:hover {
+        background-color: #050505;
+      }
+
+      .disabled {
+        width: 6px;
+        text-align: center;
+        padding: 8px 12px;
+        text-decoration: none;
+        background: #000000;
+        color: #b2b2b2;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 5px;
+        transition: background-color 0.2s ease;
+        pointer-events: none;
+      }
+    }
+
+    .sortBy {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 204px 30px 30px;
+
+      .blockForAll {
         display: flex;
         flex-direction: column;
-        align-content: center;
-        width: 900px;
+        position: absolute;
+        z-index: 12;
+        left: 718px;
+        top: 175px;
 
-        .pagination{
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
+        .butOne {
+          border: 1px solid #a2a0a0;
+          padding: 3px 5px;
+          background: #ffff;
+          color: #dad7d7;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 180px;
+          height: 50px;
+          text-align: center;
 
-            .lin{
-                width: 6px;
-                text-align: center;
-                padding: 8px 12px;
-                text-decoration: none;
-                color: #aca8a8;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin: 0 5px;
-                transition: background-color 0.2s ease;
-            }
-
-            .linA{
-                width: 6px;
-                text-align: center;
-                background: #ffffff;
-                padding: 8px 12px;
-                text-decoration: none;
-                color: #000000;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin: 0 5px;
-                transition: background-color 0.2s ease;
-               
-            }
-
-            .strel {
-                width: 6px;
-                text-align: center;
-                padding: 8px 12px;
-                text-decoration: none;
-                background: #000000;
-                color: #FFF;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin: 0 5px;
-                transition: background-color 0.2s ease;
-            }
-            .lin:hover{
-                background-color: #050505;
-            }
-
-            .disabled{
-                width: 6px;
-                text-align: center;
-                padding: 8px 12px;
-                text-decoration: none;
-                background: #000000;
-                color: #b2b2b2;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin: 0 5px;
-                transition: background-color 0.2s ease;
-                pointer-events: none;
-            }
+          .butDown {
+            border: none;
+            background: #ffff;
+          }
         }
 
-        .sortBy{
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 204px 30px 30px;
+        .blockForButs {
+          display: flex;
+          flex-direction: column;
+          width: 180px;
 
-            .blockForAll {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                z-index: 12;
-                left: 718px;
-                top: 175px;
-            
-                .butOne {
-                    border: 1px solid #a2a0a0;
-                    padding: 3px 5px;
-                    background: #ffff;
-                    color: #dad7d7;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-around;
-                    width: 180px;
-                    height: 50px;
-                    text-align: center;
-            
-                    .butDown {
-                        border: none;
-                        background: #FFFF;
-                    }
-                }
-            
-                .blockForButs {
-                    display: flex;
-                    flex-direction: column;
-                    width: 180px;
-            
-                    .butPop {
-                        border: 0.2px solid #968888;
-                        padding: 3px 5px;
-                        background: #000000;
-                        color: #ffff;
-                        padding: 10px 10px;
-                        height: 45px;
-                    }
-            
-                    .butPop:hover {
-                        border: 0.2px solid #968888;
-                        background: #FD0054;
-                        color: #ffff;
-                        padding: 10px 10px;
-                        height: 45px;
-                    }
-                }
-            }
+          .butPop {
+            border: 0.2px solid #968888;
+            padding: 3px 5px;
+            background: #000000;
+            color: #ffff;
+            padding: 10px 10px;
+            height: 45px;
+          }
+
+          .butPop:hover {
+            border: 0.2px solid #968888;
+            background: #fd0054;
+            color: #ffff;
+            padding: 10px 10px;
+            height: 45px;
+          }
         }
-    
+      }
+    }
 
     .blockForCard {
+      display: flex;
+      flex-wrap: wrap;
+
+      .photoBl {
+        padding: 15px;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
 
-        .photoBl{
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .photo {
+          width: 200px;
+          height: 250px;
+          object-fit: contain;
+        }
+      }
 
-            .photo{
-                width: 200px;
-                height: 250px;
-                object-fit: contain;
-            }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .meta {
+          width: 120px;
+          height: 120px;
         }
 
-        .card{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        
-            .meta{
-                width: 120px;
-                height: 120px;
-            }
-        
-            .but{
-                width: 100px;
-                border-radius: 5px;
-                background: #FD0054;
-                color: white;
-                border: 1px solid #FD0054;
-                padding: 15px;
-                margin-top: 20px;
-                cursor: pointer;
-                };
-            .disab {
-                width: 100px;
-                border-radius: 5px;
-                background: #c8c3c5;
-                color: white;
-                border: 1px solid #FD0054;
-                padding: 15px;
-                margin-top: 20px;
-                cursor: pointer;
-            }
-        };
+        .disab {
+          width: 100px;
+          border-radius: 5px;
+          background: #c8c3c5;
+          color: white;
+          border: 1px solid #fd0054;
+          padding: 15px;
+          margin-top: 20px;
+          cursor: pointer;
+        }
+      }
     }
-    }
+  }
 }
 
+.but {
+  width: 150px;
+  border-radius: 5px;
+  background: #fd0054;
+  color: white;
+  padding: 15px 0px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+}
 
+.but:disabled {
+    background: rgba(192, 192, 192, 0.658);
+    color: black;
+    font-weight: 500;
+    cursor: not-allowed;
+}
