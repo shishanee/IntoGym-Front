@@ -11,13 +11,14 @@ import styles from "./Cart.module.scss";
 import cartImg from "../../../public/shopping-cart (1).png";
 import basket from "../../../public/shopping-cart (2).png";
 import { Link } from "react-router-dom";
+import { AppDispatch } from "../../app/store";
 
 const Cart: React.FC = () => {
   const cart = useSelector((state) => state.cart.cart);
   const message = useSelector((state) => state.cart.message);
   const balance = useSelector((state) => state.user.user);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handlePlus = (id) => {
     dispatch(addPlus(id));
