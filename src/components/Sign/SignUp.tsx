@@ -4,7 +4,7 @@ import { authSignUp } from "../../features/applicationSlice";
 import { useNavigate } from "react-router-dom";
 import gym from "../../../public/home gym.webp";
 import styles from "./Sign.module.scss";
-import { RootState } from "../../app/store";
+import { AppDispatch, RootState } from "../../app/store";
 
 type SignType = {
   name: string;
@@ -20,7 +20,7 @@ const SignUp: React.FC = () => {
   const error = useSelector((state: RootState) => state.application.error);
   const [isSign, setIsSign] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const changeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
