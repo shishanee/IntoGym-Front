@@ -4,14 +4,20 @@ import { fetchArticle } from "../../features/wortkoutSlice";
 import Article from "./Article";
 import styles from "./Workout.module.scss";
 import { Link } from "react-router-dom";
+import { AppDispatch, RootState } from "../../app/store";
 
-const Workout: React.FC = () => {
-  const article = useSelector((state) => state.workout.article);
+function Workout() {
+  const article = useSelector((state: RootState) => state.workout.article);
 
-  const dispatch = useDispatch();
+  const handleClick = (id: string) => {
+    console.log(id);
+  };
+
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(fetchArticle());
   }, []);
+
 
   return (
     <div className={styles.articleMap}>
@@ -29,6 +35,7 @@ const Workout: React.FC = () => {
       })}
     </div>
   );
-};
+}
+
 
 export default Workout;

@@ -6,7 +6,16 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { questionCreate } from "../../features/questionSlice";
 import galka from "../../../public/galka.svg";
+import { AppDispatch } from "../../app/store";
 
+export interface InfoUser {
+  fullname: string | undefined;
+  email: string | undefined;
+  phone: string | undefined;
+  subjects: string | undefined;
+  message: string | undefined;
+}
+ 
 const AboutUs:React.FC =() => {
   const [fullName, setFullName] = useState<string>();
   const [email, setEmail] = useState<string>();
@@ -14,8 +23,8 @@ const AboutUs:React.FC =() => {
   const [subjects, setSubjects] = useState<string>();
   const [message, setMessage] = useState<string>();
   const [mes, setMes] = useState<string>("");
+  const dispatch = useDispatch<AppDispatch>();
 
-  const dispatch = useDispatch();
 
   const changeFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFullName(e.target.value);
@@ -34,7 +43,8 @@ const AboutUs:React.FC =() => {
   };
 
   const handleSumbit = () => {
-    dispatch(questionCreate({ fullName, email, phone, subjects, message }));
+    const data: InfoUser = { fullname, email, phone, subjects, message };
+    dispatch(questionCreate(data));
     setFullName("");
     setEmail("");
     setPhone("");
@@ -81,7 +91,7 @@ const AboutUs:React.FC =() => {
             <input
               type="text"
               onChange={changeFullname}
-              value={fullName}
+              value={fullname}
               placeholder="FULL NAME"
             />
             <input
@@ -112,7 +122,7 @@ const AboutUs:React.FC =() => {
             placeholder="MESSAGE"
           ></textarea>
           <button
-            disabled={!fullName || !email || !phone || !message || !subjects}
+            disabled={!fullname || !email || !phone || !message || !subjects}
             onClick={handleSumbit}
           >
             SEND EMAIL

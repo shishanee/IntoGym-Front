@@ -12,6 +12,7 @@ type SignType = {
   password: string;
 };
 
+
 const SignUp: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [login, setLogin] = useState<string>("");
@@ -20,7 +21,8 @@ const SignUp: React.FC = () => {
   const error = useSelector((state: RootState) => state.application.error);
   const [isSign, setIsSign] = useState(false);
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>(); 
+
   const navigate = useNavigate();
 
   const changeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {

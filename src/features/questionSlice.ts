@@ -1,17 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface  QuestionState{
+  error: string | null | unknown;
+  loading: boolean;
+}
+
+const initialState: QuestionState = {
   error: null,
   loading: false,
 };
 
 export const questionCreate = createAsyncThunk(
   "post/question",
-  async ({ fullName, email, phone, subjects, message }, thunkAPI) => {
+  async (data: FormData , thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4000/questions", {
         method: "POST",
-        body: JSON.stringify({ fullName, email, phone, subjects, message }),
+        body: JSON.stringify(data),
         headers: {
           "Content-type": "application/json",
         },
@@ -24,7 +29,7 @@ export const questionCreate = createAsyncThunk(
       }
 
       return json;
-    } catch (error) {
+    } catch (error: any) {
       thunkAPI.rejectWithValue(error.message);
     }
   }

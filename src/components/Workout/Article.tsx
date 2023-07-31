@@ -1,7 +1,7 @@
 import styles from "./Workout.module.scss";
-import React from "react";
 import { Card } from "antd";
 const { Meta } = Card;
+import React from "react";
 
 export interface InfoType {
   image: string;
@@ -9,12 +9,13 @@ export interface InfoType {
   title: string;
 }
 
+
 const Article: React.FC = ({ image, info, title }: InfoType) => {
   return (
     <Card
       className={styles.card}
       hoverable
-      style={{ width: 240 }}
+      style={{ height: 430, width: 240 }}
       cover={<img className={styles.image} alt="example" src={image} />}
     >
       <h3>{info}</h3>

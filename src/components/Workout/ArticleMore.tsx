@@ -1,14 +1,15 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticle } from "../../features/wortkoutSlice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Workout.module.scss";
+import { AppDispatch, RootState } from "../../app/store";
 
 const ArticleMore: React.FC = () => {
-  const articles = useSelector((state) => state.workout.article);
-  const dispatch = useDispatch();
+  const articles = useSelector((state: RootState) => state.workout.article);
+  const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams();
+  
   const filteredArticles = articles.filter((i) => i._id === id);
 
   useEffect(() => {
