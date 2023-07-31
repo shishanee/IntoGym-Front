@@ -3,7 +3,7 @@ import styles from "./Shop.module.scss";
 import Products from "./Products";
 import Categories from "./Categories";
 
-const Shop: React.FC = () => {
+const Shop = () => {
   return (
     <div className={styles.mainShop}>
         <Products />
