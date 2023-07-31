@@ -8,7 +8,7 @@ export interface UserItem {
   balance: number;
 }
 
-export interface FollowItem{
+export interface FollowItem {
   _id: string;
   name: string;
   hall: boolean;
@@ -18,31 +18,33 @@ export interface FollowItem{
 }
 
 export interface UserState {
-  user: UserItem[],
-  loading: boolean,
-  follow: FollowItem[]
-
-
+  user: UserItem[];
+  loading: boolean;
+  follow: FollowItem[];
+}
 const initialState: UserState = {
   user: [],
   follow: [],
   loading: false,
 };
 
-export const fetchUser = createAsyncThunk<UserItem[], void, {}>("fetch/uesr", async (_, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:4000/user", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${thunkAPI.getState().application.token}`, 
-      },
-    });
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    thunkAPI.rejectWithValue(error);
+export const fetchUser = createAsyncThunk<UserItem[], void, {}>(
+  "fetch/uesr",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/user", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error);
+    }
   }
-});
+);
 
 export const addMoney = createAsyncThunk<FollowItem[], void, {}>(
   "add/money",
