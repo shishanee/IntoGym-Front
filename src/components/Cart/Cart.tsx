@@ -20,10 +20,10 @@ const Cart: React.FC = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const handlePlus = (id) => {
+  const handlePlus = (id:string) => {
     dispatch(addPlus(id));
   };
-  const handleMinus = (id) => {
+  const handleMinus = (id:string) => {
     dispatch(addMinus(id));
   };
 
@@ -31,11 +31,11 @@ const Cart: React.FC = () => {
     dispatch(getCart());
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id:string) => {
     dispatch(deleteCart(id));
   };
 
-  const handlePay = (result) => {
+  const handlePay = (result:string) => {
     dispatch(cartPay(result));
   };
 

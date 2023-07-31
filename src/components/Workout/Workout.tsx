@@ -9,10 +9,6 @@ import { AppDispatch, RootState } from "../../app/store";
 function Workout() {
   const article = useSelector((state: RootState) => state.workout.article);
 
-  const handleClick = (id: string) => {
-    console.log(id);
-  };
-
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(fetchArticle());
@@ -22,7 +18,7 @@ function Workout() {
     <div className={styles.articleMap}>
       {article.map((item) => {
         return (
-          <Link to={`/${item._id}`} onClick={() => handleClick(item._id)}>
+          <Link to={`/${item._id}`}>
             <Article
               key={item._id}
               image={item.image}

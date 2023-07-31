@@ -8,7 +8,7 @@ import { AppDispatch } from "../../app/store";
 const { Meta } = Card;
 
 interface CardProps {
-  id: number;
+  _id: string;
   image: string;
   name: string;
   price: string;
@@ -24,7 +24,7 @@ const Cardd: React.FC<CardProps> = ({ id, image, name, price, ratingAdd }) => {
     dispatch(addCart(id));
   };
 
-  const filtred = cart.find((item) => item._id === id);
+  const filtred = cart.find((item: CardProps) => item._id === id);
 
   return (
     <Card
@@ -35,7 +35,11 @@ const Cardd: React.FC<CardProps> = ({ id, image, name, price, ratingAdd }) => {
     >
       <div>
         <Meta className={styles.meta} title={price} description={name} />
-        <button disabled={filtred} onClick={() => handleClick(id)} className={styles.but}>
+        <button
+          disabled={filtred}
+          onClick={() => handleClick(id)}
+          className={styles.but}
+        >
           {filtred ? "Уже в корзине" : "Добавить в корзину"}
         </button>
       </div>

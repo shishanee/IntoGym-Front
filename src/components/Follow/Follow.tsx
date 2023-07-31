@@ -11,8 +11,8 @@ import { AppDispatch } from "../../app/store";
 
 const Follow: React.FC = () => {
   const token = useSelector((state) => state.application.token);
-  const [open, setOpen] = useState(false);
-  const [followId, setFollowId] = useState("");
+  const [open, setOpen] = useState<boolean>(false);
+  const [followId, setFollowId] = useState<string>("");
   const follow = useSelector((state) => state.follow.follow);
   const dispatch = useDispatch<AppDispatch>();
 
@@ -20,7 +20,7 @@ const Follow: React.FC = () => {
     dispatch(getFollow());
   }, []);
 
-  const handleClick = (id) => {
+  const handleClick = (id:string) => {
     setFollowId(id);
     setOpen(true);
   };
@@ -67,7 +67,7 @@ const Follow: React.FC = () => {
                   Купить абонемент
                 </button>
               )}
-              {open && <ModalPop open={open} id={followId} setOpen={setOpen} />}
+              {open && <ModalPop id={followId} setOpen={setOpen} />}
             </div>
           );
         })}

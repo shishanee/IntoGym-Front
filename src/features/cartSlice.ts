@@ -90,7 +90,7 @@ export const deleteCart = createAsyncThunk(
 
 export const cartPay = createAsyncThunk(
   "cart/pay",
-  async (result, thunkAPI) => {
+  async (result, thunkAPI:any) => {
     try {
       const res = await fetch("http://localhost:4000/cartpay", {
         method: "PATCH",
@@ -108,9 +108,9 @@ export const cartPay = createAsyncThunk(
   }
 );
 
-export const addCart = createAsyncThunk<void>(
+export const addCart = createAsyncThunk(
   "add/get",
-  async (id, thunkAPI) => {
+  async (id, thunkAPI:any) => {
     try {
       const res = await fetch("http://localhost:4000/cart", {
         method: "PATCH",
@@ -130,7 +130,7 @@ export const addCart = createAsyncThunk<void>(
 
 export const createCart = createAsyncThunk(
   "create/cart",
-  async (_, thunkAPI) => {
+  async (_, thunkAPI:any) => {
     try {
       const res = await fetch("http://localhost:4000/cart", {
         method: "POST",
@@ -141,7 +141,7 @@ export const createCart = createAsyncThunk(
       });
       const data = await res.json();
       return data;
-    } catch (error) {
+    } catch (error:any) {
       thunkAPI.rejectWithValue(error.message);
     }
   }

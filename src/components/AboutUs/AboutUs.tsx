@@ -114,8 +114,8 @@ const AboutUs: React.FC = () => {
             />
           </div>
           <textarea
-            onChange={changeMessage}
             value={message}
+            onChange={changeMessage}
             name=""
             id=""
             placeholder="MESSAGE"

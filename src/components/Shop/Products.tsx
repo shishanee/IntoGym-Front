@@ -159,8 +159,8 @@ const Products: React.FC = () => {
           return (
             <div key={item._id} className={styles.photoBl}>
               <Cardd
-                id={item._id}
                 image={item.image}
+                id={item._id}
                 name={item.name}
                 price={`${item.price} RUB`}
                 ratingAdd={ratingAdd}

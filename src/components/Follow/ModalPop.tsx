@@ -4,7 +4,12 @@ import { addFollow } from "../../features/followSlice";
 import { Link } from "react-router-dom";
 import { AppDispatch } from "../../app/store";
 
-const ModalPop: React.FC = ({ setOpen, id }) => {
+interface OpenType {
+  setOpen: boolean;
+  id: string;
+}
+
+const ModalPop = ({ setOpen, id }: OpenType) => {
   const message = useSelector((state) => state.follow.message);
 
   const dispatch = useDispatch<AppDispatch>();
