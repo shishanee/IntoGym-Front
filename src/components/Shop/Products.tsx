@@ -7,6 +7,7 @@ import { fetchProductCategory } from "../../features/productCategorySlice";
 import Pagination from "./Pagination";
 import Cardd from "./Card";
 import { updateQuery } from "../../features/searchSlice";
+import { AppDispatch } from "../../app/store";
 
 const Products: React.FC = () => {
   const products = useSelector((state) => state.products.products);
@@ -17,6 +18,7 @@ const Products: React.FC = () => {
   const lastIndex = currentPage * maxItems;
   const firstIndex = lastIndex - maxItems;
 
+  const dispatch = useDispatch<AppDispatch>();
   const ratingAdd = (id) => {
     dispatch(addRating(id));
   };
@@ -35,8 +37,6 @@ const Products: React.FC = () => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts()), dispatch(fetchProductCategory());

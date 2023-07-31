@@ -7,6 +7,7 @@ import {
   fetchProducts,
 } from "../../features/productSlice";
 import { updateQuery } from "../../features/searchSlice";
+import { AppDispatch } from "../../app/store";
 
 const Categories: React.FC = () => {
   const productCategory = useSelector(
@@ -15,7 +16,7 @@ const Categories: React.FC = () => {
 
   const search = useSelector((state) => state.search.query);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleClick = (id) => {
     dispatch(fetchCategoryProduct(id));

@@ -7,13 +7,14 @@ import styles from "./Follow.module.scss";
 import { useState } from "react";
 import ModalPop from "./ModalPop";
 import { Link } from "react-router-dom";
+import { AppDispatch } from "../../app/store";
 
 const Follow: React.FC = () => {
   const token = useSelector((state) => state.application.token);
   const [open, setOpen] = useState(false);
   const [followId, setFollowId] = useState("");
   const follow = useSelector((state) => state.follow.follow);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(getFollow());

@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "../Profile.module.scss";
 import SideBar from "./SideBar";
 import { authSignOut } from "../../../features/applicationSlice";
+import { AppDispatch } from "../../../app/store";
 
 const SignOut: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const handleClick = () => {

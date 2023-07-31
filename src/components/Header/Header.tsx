@@ -9,10 +9,11 @@ import cart from "../../../public/shopping-cart (1).png";
 import workout from "../../../public/gym.png";
 import about from "../../../public/file.png";
 import { createCart } from "../../features/cartSlice";
+import { AppDispatch } from "../../app/store";
 
 const Header: React.FC = () => {
   const token = useSelector((state) => state.application.token);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <header>
       <div className={styles.blockDuo}>

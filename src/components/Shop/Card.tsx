@@ -3,6 +3,7 @@ import { Card } from "antd";
 import styles from "./Shop.module.scss";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../features/cartSlice";
+import { AppDispatch } from "../../app/store";
 
 const { Meta } = Card;
 
@@ -15,7 +16,7 @@ interface CardProps {
 }
 
 const Cardd: React.FC<CardProps> = ({ id, image, name, price, ratingAdd }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleClick = (id: number) => {
     ratingAdd(id);

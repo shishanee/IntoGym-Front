@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addMoney } from "../../../features/userSlice";
 import styles from "./Payment.module.scss";
+import { AppDispatch } from "../../../app/store";
 
 const Balance: React.FC = () => {
   const [balance, setBalance] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [pay, setPay] = useState(false);
   const user = useSelector((state) => state.user.user);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value !== "-") setBalance(e.target.value);

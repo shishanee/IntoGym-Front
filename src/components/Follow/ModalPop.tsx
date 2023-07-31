@@ -2,11 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Follow.module.scss";
 import { addFollow } from "../../features/followSlice";
 import { Link } from "react-router-dom";
+import { AppDispatch } from "../../app/store";
 
 const ModalPop: React.FC = ({ setOpen, id }) => {
   const message = useSelector((state) => state.follow.message);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleClick = () => {
     dispatch(addFollow(id));
