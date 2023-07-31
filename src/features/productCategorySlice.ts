@@ -1,6 +1,22 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+interface productCategory {
+  _id: string;
+  name: string;
+  price: number;
+  inStock: number;
+  rating: number;
+  amount: number;
+  category: string;
+}
+
+interface ProductsCategoryState {
+  productCategory: productCategory[];
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: ProductsCategoryState = {
     productCategory: [],
     loading: false,
     error: null
@@ -27,7 +43,7 @@ export const fetchProductCategory = createAsyncThunk(
     reducers: {},
     extraReducers: (builder) => {
       builder
-        .addCase(fetchProductCategory.fulfilled, (state, action) => {
+        .addCase(fetchProductCategory.fulfilled, (state, action: PayloadAction<productCategory[]>) => {
           state.productCategory = action.payload;
         })
     }})

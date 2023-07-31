@@ -6,7 +6,6 @@ import {
   fetchCategoryProduct,
   fetchProducts,
 } from "../../features/productSlice";
-import CardForCat from "./CardForCat";
 import { updateQuery } from "../../features/searchSlice";
 
 const Categories: React.FC = () => {

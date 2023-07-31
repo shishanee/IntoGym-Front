@@ -23,7 +23,7 @@ export const fetchUser = createAsyncThunk("fetch/uesr", async (_, thunkAPI) => {
 
 export const addMoney = createAsyncThunk(
   "add/money",
-  async ({ balance }, thunkAPI) => {
+  async ({ balance }, thunkAPI: any) => {
     try {
       const res = await fetch("http://localhost:4000/balance", {
         method: "PATCH",
