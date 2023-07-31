@@ -4,14 +4,15 @@ import { authSignIn } from "../../features/applicationSlice";
 import { useNavigate } from "react-router-dom";
 import styles from "./Sign.module.scss";
 import gym from "../../../public/home gym.webp";
+import { AppDispatch, RootState } from "../../app/store";
 
 const SignIn = () => {
-  const error = useSelector((state) => state.application.error);
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [isSign, setIsSign] = useState(false);
+  const error = useSelector((state: RootState) => state.application.error);
+  const [login, setLogin] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isSign, setIsSign] = useState<boolean>(false);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const changeLogin = (e) => {

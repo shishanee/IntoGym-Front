@@ -1,17 +1,40 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export interface UserItem {
+  _id: string;
+  name: string;
+  login: string;
+  password: string;
+  balance: number;
+}
+
+export interface FollowItem{
+  _id: string;
+  name: string;
+  hall: boolean;
+  pool: boolean;
+  sauna: boolean;
+  price: number;
+}
+
+export interface UserState {
+  user: UserItem[],
+  loading: boolean,
+  follow: FollowItem[]
+}
+
+const initialState: UserState = {
   user: [],
   follow: [],
   loading: false,
 };
 
-export const fetchUser = createAsyncThunk("fetch/uesr", async (_, thunkAPI) => {
+export const fetchUser = createAsyncThunk<UserItem[], void, {}>("fetch/uesr", async (_, thunkAPI) => {
   try {
     const res = await fetch("http://localhost:4000/user", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        Authorization: `Bearer ${thunkAPI.getState().application.token}`, 
       },
     });
     const data = await res.json();
@@ -21,7 +44,7 @@ export const fetchUser = createAsyncThunk("fetch/uesr", async (_, thunkAPI) => {
   }
 });
 
-export const addMoney = createAsyncThunk(
+export const addMoney = createAsyncThunk<FollowItem[], void, {}>(
   "add/money",
   async ({ balance }, thunkAPI) => {
     try {

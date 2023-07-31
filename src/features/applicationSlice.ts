@@ -1,5 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+export interface IApplication {
+  error: string | null | unknown;
+  signinUp: boolean;
+  signinIn: boolean;
+  token: string;
+}
+
 const initialState = {
   error: null,
   signinUp: false,

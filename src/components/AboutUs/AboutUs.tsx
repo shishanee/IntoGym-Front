@@ -4,37 +4,47 @@ import location from "../../../public/location.svg";
 import call from "../../../public/call_FILL0_wght400_GRAD0_opsz48.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import  { questionCreate } from "../../features/questionSlice";
-import galka from "../../../public/galka.svg"
+import { questionCreate } from "../../features/questionSlice";
+import galka from "../../../public/galka.svg";
+import { AppDispatch } from "../../app/store";
 
+export interface InfoUser {
+  fullname: string | undefined;
+  email: string | undefined;
+  phone: string | undefined;
+  subjects: string | undefined;
+  message: string | undefined;
+}
+ 
 function AboutUs() {
-  const [fullName, setFullName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [subjects, setSubjects] = useState();
-  const [message, setMessage] = useState();
-  const [mes, setMes] = useState("");
+  const [fullname, setFullName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [subjects, setSubjects] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [mes, setMes] = useState<string>("");
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const changeFullname = (e) => {
+  const changeFullname = (e: any) => {
     setFullName(e.target.value);
   };
-  const changeEmail = (e) => {
+  const changeEmail = (e: any) => {
     setEmail(e.target.value);
   };
-  const changePhone = (e) => {
+  const changePhone = (e: any) => {
     setPhone(e.target.value);
   };
-  const changeSubjects = (e) => {
+  const changeSubjects = (e: any) => {
     setSubjects(e.target.value);
   };
-  const changeMessage = (e) => {
+  const changeMessage = (e: any) => {
     setMessage(e.target.value);
   };
 
   const handleSumbit = () => {
-    dispatch(questionCreate({ fullName, email, phone, subjects, message }));
+    const data: InfoUser = { fullname, email, phone, subjects, message };
+    dispatch(questionCreate(data));
     setFullName("");
     setEmail("");
     setPhone("");
@@ -81,7 +91,7 @@ function AboutUs() {
             <input
               type="text"
               onChange={changeFullname}
-              value={fullName}
+              value={fullname}
               placeholder="FULL NAME"
             />
             <input
@@ -114,15 +124,17 @@ function AboutUs() {
             placeholder="MESSAGE"
           ></textarea>
           <button
-            disabled={!fullName || !email || !phone || !message || !subjects}
+            disabled={!fullname || !email || !phone || !message || !subjects}
             onClick={handleSumbit}
           >
             SEND EMAIL
           </button>
-          {mes && <div className={styles.mesBlock}>
-            <img src={galka} alt="" />
-            <span className={styles.mes}>{mes}</span>
-            </div>}
+          {mes && (
+            <div className={styles.mesBlock}>
+              <img src={galka} alt="" />
+              <span className={styles.mes}>{mes}</span>
+            </div>
+          )}
         </div>
       </div>
       <div

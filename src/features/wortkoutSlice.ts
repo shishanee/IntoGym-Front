@@ -1,22 +1,35 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { builders } from "prettier/doc.js";
 
+export interface ArticleState {
+    error: string | null | unknown,
+    loading: boolean,
+    article: ArticleItem[]    
+}
 
-const initialState = {
+export interface ArticleItem {
+    _id: string;
+    image: string;
+    title: string;
+    info: string;
+    data: number;
+    __v: number;
+}
+
+const initialState:  ArticleState = {
     error: null,
     loading: false,
     article: [],
 }
 
-export const fetchArticle = createAsyncThunk(
+export const fetchArticle = createAsyncThunk<ArticleItem[], void, {}>(
     "article/fetch",
-    async (data, thunkAPI ) => {
+    async (_, thunkAPI ) => {
         try {
             const res = await fetch("http://localhost:4000/article");
             const data = await res.json();
             return data
-        } catch (error) {
-            thunkAPI.rejectWithValue(e)
+        } catch (e) {
+            thunkAPI.rejectWithValue(e as any)
         }
     }
 );
@@ -29,7 +42,7 @@ const workoutSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-        .addCase(fetchArticle.pending, (state, action) => {
+        .addCase(fetchArticle.pending, (state ) => {
             state.loading = true;
         })
         .addCase(fetchArticle.rejected, (state, action) => {
