@@ -15,16 +15,15 @@ export interface InfoUser {
   subjects: string | undefined;
   message: string | undefined;
 }
- 
-const AboutUs:React.FC =() => {
-  const [fullName, setFullName] = useState<string>();
+
+const AboutUs: React.FC = () => {
+  const [fullname, setFullName] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [phone, setPhone] = useState<string>();
   const [subjects, setSubjects] = useState<string>();
   const [message, setMessage] = useState<string>();
   const [mes, setMes] = useState<string>("");
   const dispatch = useDispatch<AppDispatch>();
-
 
   const changeFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFullName(e.target.value);
@@ -148,6 +147,6 @@ const AboutUs:React.FC =() => {
       </div>
     </>
   );
-}
+};
 
 export default AboutUs;

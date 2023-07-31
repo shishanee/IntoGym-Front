@@ -1,15 +1,23 @@
+import React from "react";
 import { Card } from "antd";
 import styles from "./Shop.module.scss";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../features/cartSlice";
-import { Dispatch } from "redux";
 
 const { Meta } = Card;
 
-const Cardd: React.FC = ({ id, image, name, price, ratingAdd }) => {
+interface CardProps {
+  id: number;
+  image: string;
+  name: string;
+  price: string;
+  ratingAdd: (id: number) => void;
+}
+
+const Cardd: React.FC<CardProps> = ({ id, image, name, price, ratingAdd }) => {
   const dispatch = useDispatch();
 
-  const handleClick = (id) => {
+  const handleClick = (id: number) => {
     ratingAdd(id);
     dispatch(addCart(id));
   };
@@ -30,4 +38,5 @@ const Cardd: React.FC = ({ id, image, name, price, ratingAdd }) => {
     </Card>
   );
 };
+
 export default Cardd;
