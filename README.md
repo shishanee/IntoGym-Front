@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# Спортивный зал IntoGym
+IntoGym это платформа посвященная нашему современному спортзалу! Наш сайт создан с целью обеспечить вас всем необходимым для эффективных тренировок, комфортной атмосферы и достижения ваших фитнес-целей. Здесь вы найдете место, где сочетаются инновационные подходы к тренировкам, лучшие тренеры и инструкторы, а также поддержка активного спортивного сообщества.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Фукнционал
+- Авторизация
+- Покупка абонемента
+- Отслеживание абонемента
+- Магазин товаров
+- Добавление корзину
+- Сортировка товаров
+- Оформление заказа
+- Отзывы
+- Статьи для домашних тренировок
 
-Currently, two official plugins are available:
+# Стек проекта
+- React
+- TypeScript
+- React router
+- Redux / Redux Toolkit
+- Node js
+- mongoose
+- Prettier
+- ant design
+  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Команда
+- https://github.com/shishanee
+- https://github.com/Navrazov
+- https://github.com/yakhya1
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Запуск
+- https://github.com/shishanee/IntoGym-Back скачать и прописать (npx nodemon)
+- скачать текущий репозиторий и прописать (npm run dev)
